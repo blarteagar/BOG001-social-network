@@ -7,6 +7,39 @@
   <title>Document</title>
 </head>
 <body>
+  <main>
+    <form>
+      <input type="text" id="nombre" placeholder="Nombre completo">
+      <input type="text" id="nickName" placeholder="Nick name" autocomplete="username">
+      <input type="email" id="emailRegister" placeholder="Ingresa tu Email">
+      <input type="password" id="passRegister" placeholder="Password Crear">
+      <button id="btnRegister">REGiSTRARSE</button>
+    </form>
+  </main>
+  
   <script type="module" src="main.js"></script>
-</body>
+  <!--CONFIGURACIÓN DEL FIREBASE-->
+  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+
+  <script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyC_o8KiDowZUckCmoti0UJzaebTBM8Z_QA",
+    authDomain: "techme-4b908.firebaseapp.com",
+    databaseURL: "https://techme-4b908.firebaseio.com",
+    projectId: "techme-4b908",
+    storageBucket: "techme-4b908.appspot.com",
+    messagingSenderId: "535393773683",
+    appId: "1:535393773683:web:2224eb37e587e828282206"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  </script>
+  <!--CONFIGURACIÓN DEL FIREBASE-->
+  </script>
+ </body>
 </html>
