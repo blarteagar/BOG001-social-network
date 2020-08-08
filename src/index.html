@@ -7,12 +7,19 @@
   <title>Document</title>
 </head>
 <body>
-
-
-  <input type="email" id="emailRegister" placeholder="Ingresa tu Email">
-  <input type="password" id="passRegister" placeholder="Password Crear">
-  <button id="btnRegister">REGRISTRARSE</button>
-  
+  <form>
+    <input type="button" value="crear cuenta con google" id="login">
+    <input type="email" id="emailRegister" placeholder="Ingresa tu Email">
+    <input type="password" id="passRegister" placeholder="Password Crear">
+    <input type="button" value="registrarme" id="btnRegister">
+    </form>
+    <form id="form">
+      <input type="email" id="emailLogin" placeholder="Ingresa tu email" required>
+      <input type="password" id="passLogin" placeholder="ingresa tu contraseña" required>
+      <input type="button" value="Ingresar" id="entrar">
+     </form>
+    
+   
   
   
   <!--CONFIGURACIÓN DEL FIREBASE-->
@@ -22,22 +29,11 @@
   <!-- Add Firebase products that you want to use -->
   <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
   
-  <script>
-  const firebaseConfig = {
-    apiKey: "AIzaSyC_o8KiDowZUckCmoti0UJzaebTBM8Z_QA",
-    authDomain: "techme-4b908.firebaseapp.com",
-    databaseURL: "https://techme-4b908.firebaseio.com",
-    projectId: "techme-4b908",
-    storageBucket: "techme-4b908.appspot.com",
-    messagingSenderId: "535393773683",
-    appId: "1:535393773683:web:2224eb37e587e828282206"
-  };
-
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  </script>
-  <!--CONFIGURACIÓN DEL FIREBASE-->
+  
 <script type="module" src="main.js"></script>
   <script src="lib/register.js"></script>
+  <script src="lib/login.js"></script>
+  <script src="lib/firebaseConfig.js"></script>
+  
 </body>
 </html>
