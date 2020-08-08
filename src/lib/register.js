@@ -22,8 +22,6 @@ const userRegister = () => {
   register(userEmail, userPassword);
   console.log(userEmail);
   console.log(userPassword);
+  
 }
 
-// Escuchar el evento:
-var btnRegister=document.getElementById("btnRegister");
-btnRegister.addEventListener("click", userRegister);

@@ -8,11 +8,12 @@
 </head>
 <body>
 
-
-  <input type="email" id="emailRegister" placeholder="Ingresa tu Email">
-  <input type="password" id="passRegister" placeholder="Password Crear">
-  <button id="btnRegister">REGRISTRARSE</button>
+  <input type="text" id="nameRegister" placeholder="Nombre">
+  <input type="email" id="emailRegister" placeholder="Email">
+  <input type="password" id="passRegister" placeholder="Crea tu contraseña">
+  <div id="buttons"></div>
   
+  <h1 id="userName"></h1>
   
   
   <!--CONFIGURACIÓN DEL FIREBASE-->
@@ -21,6 +22,7 @@
   <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
   <!-- Add Firebase products that you want to use -->
   <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
   <!--CONFIGURACIÓN DEL FIREBASE-->
   
 
@@ -28,5 +30,6 @@
   <script src="lib/firebaseConfig.js"></script>
   <script type="module" src="main.js"></script>
   <script src="lib/register.js"></script>
+  <script src="lib/logOut.js"></script>
 </body>
 </html>
