@@ -12,17 +12,11 @@
   <h1>TechMe</h1>
   <h2>¡Únete a nuestra Red Social de Developers!</h2>
 
-  <input type="email" id="emailRegister" placeholder="Ingresa tu Email">
-  <input type="password" id="passRegister" placeholder="Password Crear">
-
   <br>
 
   <a href="#/Register">Crear Cuenta</a> <a href="#/Login">ENTRAR</a>
 
-  <!--Contenido-->
-  <section id="root">
 
-  </section>
 
 
 
@@ -32,9 +26,26 @@
   <!--CONFIGURACIÓN DEL FIREBASE-->
   <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
   <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
-  <!-- Add Firebase products that you want to use -->
+<body>
+ <form>
+ <input type="button" value="crear cuenta con google" id="login">
+ <input type="email" id="emailRegister" placeholder="Ingresa tu Email">
+ <input type="password" id="passRegister" placeholder="Password Crear">
+ <input type="button" value="registrarme" id="btnRegister">
+ </form>
+ <form id="form">
+  <input type="email" id="emailLogin" placeholder="Ingresa tu email" required>
+  <input type="password" id="passLogin" placeholder="ingresa tu contraseña" required>
+  <input type="button" value="Ingresar" id="entrar">
+ </form>
+  <!--Contenido-->
+  <section id="root">
+
+  </section>
+  
+ <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+  
   <!--CONFIGURACIÓN DEL FIREBASE-->
 
 
@@ -42,6 +53,9 @@
   <script src="lib/firebaseConfig.js"></script>
   <script type="module" src="main.js"></script>
   <script src="lib/register.js"></script>
+  <script src="lib/login.js"></script>
+
+
 </body>
 
 </html>
