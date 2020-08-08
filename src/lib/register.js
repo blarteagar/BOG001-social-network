@@ -23,7 +23,6 @@ const userRegister = () => {
   register(userEmail, userPassword)
   console.log(userEmail);
   console.log(userPassword);
+  
 }
 
-let btnRegister=document.getElementById("btnRegister");
-btnRegister.addEventListener("click", userRegister);
