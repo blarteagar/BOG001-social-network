@@ -1,9 +1,9 @@
 import {  profileEmailValidator, profilePasswordValidator } from './validations.js';
 
 const login = (email, password) => {
-  firebase.auth().signInWithEmailAndPassword(email, password).then(function () {
-    debugger
-    alert("bienvenido");
+firebase.auth().signInWithEmailAndPassword(email, password).then(function() {
+  
+   alert("bienvenido");
   }).catch(function (error) {
     // Handle Errors here.
     var errorCode = error.code;
@@ -13,33 +13,24 @@ const login = (email, password) => {
   });
 }
 
-// const profileEmailValidator = {
-//   pattern: /^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$/g,
-//   patternError: { title: 'Dirección correo electrónico invalida!', subTitle: 'Perdón, El correo electrónico  ingresado es invalido.' }
-// };
-// const profilePasswordValidator = {
-//   minLength: 6,
-//   lengthError: { title: 'Contraseña muy corta!', subTitle: 'Perdón, La contraseña debe contener mas de 4 caracteres.' }
-// };
-
 const LoginUser = () => {
 
   let loginEmail = document.getElementById("emailLogin").value;
   let loginPass = document.getElementById("passLogin").value;
   loginEmail.trim()
-  var validEmail = new RegExp(profileEmailValidator.pattern)
+  
+  let validEmail = new RegExp(profileEmailValidator.pattern)
   if (validEmail.test(loginEmail) && loginPass.length >= profilePasswordValidator.minLength) {
     login(loginEmail, loginPass);
   }
-  else {
-     alert("");
+  else{
+   //error
+   alert("el email ingresado o la contraseña no son válidos")
   }
 }
 
 let loginBtn = document.getElementById("entrar");
 loginBtn.addEventListener("click", LoginUser)
-
-
 
 
 const longinGoogle = async () => {
@@ -62,7 +53,7 @@ const longinGoogle = async () => {
       var email = error.email;
       var credential = error.credential;
       // ...
-      if (user === "auth/account-exists-with-different-credential") {
+      if (errorCode=== "auth/account-exists-with-different-credential") {
         alert("es el mismo usuario");
       }
     });

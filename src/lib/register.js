@@ -1,27 +1,51 @@
-const register = (email, password) => {
+import {  profileEmailValidator, profilePasswordValidator } from './validations.js';
+export const register = (email, password) => {
   firebase.auth().createUserWithEmailAndPassword(email, password).then((userRes) => {
-    debugger
-var user = firebase.auth().currentUser;
-user.sendEmailVerification().then(function() {
-  debugger
+  var user = firebase.auth().currentUser;
+  user.sendEmailVerification().then(function() {
+  console.log(user);
+  // Email sent.
+  alert("Hemos enviado un correo de verificación, por favor valida tu cuenta para continuar.");
+  return user;
 });
   }).catch(function(error) {
     // Handle Errors here.
-  var errorCode = error.code;
-  var errorMessage = error.message;
-  console.log(errorCode);
-  console.log(errorMessage);
-   alert("La contrseña debe tener al menos 6 caracteres");
-
+    var errorCode = error.code; 
+    var errorMessage = error.message;
+    
+    console.log(error.credential)
+    console.log(errorCode);
+    console.log(errorMessage);
+   
+    if(errorCode=="auth/invalid-email")
+    {alert("Por favor introduce un correo válido");
+      return errorCode;      
+    } else if (errorCode=="auth/email-already-in-use"){
+       alert("Este correo ya está registrado");
+      return errorCode;    
+    } else{
+      alert("La contraseña debe tener mínimo 6 caracteres");
+      return errorCode;
+    }
+    // ...
   });
 }
 
-const userRegister = () => {
+export const userRegister = () => {
   let userEmail = document.getElementById("emailRegister").value;
   let userPassword = document.getElementById("passRegister").value;
-  register(userEmail, userPassword)
-  console.log(userEmail);
-  console.log(userPassword);
+  userEmail.trim()
+  let validEmail = new RegExp(profileEmailValidator.pattern)
+  if (validEmail.test(userEmail) && userPassword.length >= profilePasswordValidator.minLength) {
+    register(userEmail, userPassword)
+    console.log(userEmail);
+    console.log(userPassword);
+    
+  }
+  else{
+   //error
+   alert("el email ingresado o la contraseña no son válidos")
+  }
   
 }
 
