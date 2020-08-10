@@ -1,5 +1,4 @@
-
-export const register = (email, password) => {
+ export const register = (email, password) => {
   firebase.auth().createUserWithEmailAndPassword(email, password).then((userRes) => {
   var user = firebase.auth().currentUser;
   user.sendEmailVerification().then(function() {
@@ -34,9 +33,9 @@ export const register = (email, password) => {
 export const userRegister = () => {
   let userEmail = document.getElementById("emailRegister").value;
   let userPassword = document.getElementById("passRegister").value;
+  userEmail.trim()
   register(userEmail, userPassword)
   console.log(userEmail);
   console.log(userPassword);
-  
 }
 
