@@ -1,4 +1,4 @@
-
+import {  profileEmailValidator, profilePasswordValidator } from './validations.js';
 export const register = (email, password) => {
   firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
   var user = firebase.auth().currentUser;
@@ -34,9 +34,18 @@ export const register = (email, password) => {
 export const userRegister = () => {
   let userEmail = document.getElementById("emailRegister").value;
   let userPassword = document.getElementById("passRegister").value;
-  register(userEmail, userPassword)
-  console.log(userEmail);
-  console.log(userPassword);
+  userEmail.trim()
+  let validEmail = new RegExp(profileEmailValidator.pattern)
+  if (validEmail.test(userEmail) && userPassword.length >= profilePasswordValidator.minLength) {
+    register(userEmail, userPassword)
+    console.log(userEmail);
+    console.log(userPassword);
+    
+  }
+  else{
+   //error
+   alert("el email ingresado o la contraseña no son válidos")
+  }
   
 }
 

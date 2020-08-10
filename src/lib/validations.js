@@ -4,8 +4,6 @@ export const profileEmailValidator = {
   };
   
 export const profilePasswordValidator = {
-  minLength: 5,
+  minLength: 6,
   lengthError: { title: 'Contraseña muy corta!', subTitle: 'Perdón, La contraseña debe contener mas de 4 caracteres.' },
-  pattern: /^[a-zA-Z0-9!@#$%^&*()_+-=]*$/g,
-  patternError: { title: 'Contraseña invalida!', subTitle: 'Perdón, La contraseña no puede contener caracteres especiales.' }
 };
