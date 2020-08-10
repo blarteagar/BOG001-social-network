@@ -42,7 +42,7 @@ let loginBtn = document.getElementById("entrar");
 loginBtn.addEventListener("click", LoginUser)
 
 
-const longinGoogle = async () => {
+const loginGoogle = async () => {
   
   if (firebase.auth().currentUser == null) {
     var provider = new firebase.auth.GoogleAuthProvider();
@@ -74,5 +74,5 @@ const longinGoogle = async () => {
 }
 
 
-const user = document.getElementById("singIn");
-user.addEventListener("click", longinGoogle);
+const user = document.getElementById("signIn");
+user.addEventListener("click", loginGoogle);

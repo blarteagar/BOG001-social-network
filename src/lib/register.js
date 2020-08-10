@@ -1,12 +1,12 @@
 
 export const register = (email, password) => {
-  firebase.auth().createUserWithEmailAndPassword(email, password).then((userRes) => {
+  firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
   var user = firebase.auth().currentUser;
   user.sendEmailVerification().then(function() {
   console.log(user);
   // Email sent.
   alert("Hemos enviado un correo de verificación, por favor valida tu cuenta para continuar.");
-  return user;
+   return user;
 });
   }).catch(function(error) {
     // Handle Errors here.
