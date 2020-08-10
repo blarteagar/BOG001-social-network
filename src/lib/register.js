@@ -4,7 +4,6 @@ const register = (email, password) => {
 var user = firebase.auth().currentUser;
 user.sendEmailVerification().then(function() {
   debugger
-  // Email sent.
 });
   }).catch(function(error) {
     // Handle Errors here.
@@ -13,7 +12,7 @@ user.sendEmailVerification().then(function() {
   console.log(errorCode);
   console.log(errorMessage);
    alert("La contrseña debe tener al menos 6 caracteres");
-    // ...
+
   });
 }
 
@@ -23,7 +22,6 @@ const userRegister = () => {
   register(userEmail, userPassword)
   console.log(userEmail);
   console.log(userPassword);
+  
 }
 
-let btnRegister=document.getElementById("btnRegister");
-btnRegister.addEventListener("click", userRegister);
