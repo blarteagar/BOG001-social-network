@@ -1,3 +1,6 @@
+import { userRegister } from "./register.js";
+
+
 let buttons = document.getElementById("buttons");
 
 // Observador:
