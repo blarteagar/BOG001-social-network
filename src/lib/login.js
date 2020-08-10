@@ -1,5 +1,3 @@
-import {  profileEmailValidator, profilePasswordValidator } from './validations.js';
-
 const login = (email, password) => {
 firebase.auth().signInWithEmailAndPassword(email, password).then(function() {
   
@@ -18,15 +16,9 @@ const LoginUser = () => {
   let loginEmail = document.getElementById("emailLogin").value;
   let loginPass = document.getElementById("passLogin").value;
   loginEmail.trim()
-  
-  let validEmail = new RegExp(profileEmailValidator.pattern)
-  if (validEmail.test(loginEmail) && loginPass.length >= profilePasswordValidator.minLength) {
-    login(loginEmail, loginPass);
-  }
-  else{
-   //error
-   alert("el email ingresado o la contraseña no son válidos")
-  }
+  login(loginEmail, loginPass);
+  console.log(loginEmail);
+  console.log(loginPass);
 }
 
 let loginBtn = document.getElementById("entrar");
