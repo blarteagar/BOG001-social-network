@@ -19,7 +19,7 @@ let content = document.getElementById("root")//Llamando a la sección HTML donde
 //Enrouting-Función enrutadora (podría ir en un módulo aparte)
 const router = (route) => {
     switch (route) {
-        case "#/Register": {
+        case "#/": {
             return content.appendChild(viewRegister());//Por el momento, retornamos "vistas"
         }
         case "#/Login": {
@@ -31,4 +31,4 @@ const router = (route) => {
     }
 };
 
-router;//Llamamos a la función router
+router(route);//Llamamos a la función router
