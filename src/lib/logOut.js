@@ -4,7 +4,7 @@ import { userRegister } from "./register.js";
 let buttons = document.getElementById("buttons");
 
 // Observador:
-firebase.auth().onAuthStateChanged(function(user) {
+firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
         console.log(user);
         // User is signed in.
@@ -19,28 +19,28 @@ firebase.auth().onAuthStateChanged(function(user) {
         userLogout();
 
     } else {
-        
+
         // User is signed out.
         console.log("no existe usuario");
-        buttons.innerHTML=`<button id="btnRegister">REGRISTRARSE</button>`;
-        let btnRegister=document.getElementById("btnRegister");
+        buttons.innerHTML = `<button id="btnRegister">REGRISTRARSE</button>`;
+        let btnRegister = document.getElementById("btnRegister");
         btnRegister.addEventListener("click", userRegister);
     }
 });
 
 // LogOut function de Firebase:
-function logOut () {
+function logOut() {
 
-    firebase.auth().signOut().then(function() {
+    firebase.auth().signOut().then(function () {
         // Sign-out successful.
-      }).catch(function(error) {
+    }).catch(function (error) {
         // An error happened.
-      });
+    });
 }
-  
+
 // Función UserLogout:
 
-function userLogout (){
+function userLogout() {
     let btnLogOut = document.getElementById("btnLogout");
     btnLogOut.addEventListener("click", logOut);
 }
