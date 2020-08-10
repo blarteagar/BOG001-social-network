@@ -37,6 +37,7 @@ const LoginUser = () => {
   }
   else{
    //error
+   alert("el email ingresado o la contraseña no son válidos")
   }
 }
 
@@ -44,12 +45,7 @@ let loginBtn = document.getElementById("entrar");
 loginBtn.addEventListener("click", LoginUser)
 
   
-
-
-
-
-
-
+//Login con Google
 const longinGoogle = () => {    
 if (firebase.auth().currentUser){
     var provider = new firebase.auth.GoogleAuthProvider();
@@ -76,7 +72,5 @@ if (firebase.auth().currentUser){
 }
 
 }
-
-
  const user = document.getElementById("login");
  user.addEventListener("click", longinGoogle);

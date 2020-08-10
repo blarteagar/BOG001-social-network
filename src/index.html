@@ -16,45 +16,36 @@
 
   <a href="#/Register">Crear Cuenta</a> <a href="#/Login">ENTRAR</a>
 
-
-
-  
-  
   <h1 id="userName"></h1>
-  
-  
-  <!--CONFIGURACIÓN DEL FIREBASE-->
-  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
-  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-<body>
- <form>
-  <input type="text" id="nameRegister" placeholder="Nombre">
-  <input type="email" id="emailRegister" placeholder="Email">
-  <input type="password" id="passRegister" placeholder="Crea tu contraseña">
- <input type="button" value="crear cuenta con google" id="login">
- <input type="button" value="registrarme" id="btnRegister">
- </form>
- <form id="form">
-  <input type="email" id="emailLogin" placeholder="Ingresa tu email" required>
-  <input type="password" id="passLogin" placeholder="ingresa tu contraseña" required>
-  <input type="button" value="Ingresar" id="entrar">
- </form>
- <div id="buttons"></div>
-  <!--Contenido-->
-  <section id="root">
 
-  </section>
-  
- <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
-  <!--CONFIGURACIÓN DEL FIREBASE-->
-  
-  <script src="lib/firebaseConfig.js"></script>
-  <script type="module" src="main.js"></script>
-  <script src="lib/register.js"></script>
-  <script src="lib/login.js"></script>
-  <script src="lib/logOut.js"></script>
-</body>
+  <body>
+    <form>
+      <input type="button" value="crear cuenta con google" id="login">
+      <input type="text" id="nameRegister" placeholder="Nombre">
+      <input type="email" id="emailRegister" placeholder="Email">
+      <input type="password" id="passRegister" placeholder="Crea tu contraseña">
+    </form>
+    <form id="form">
+      <input type="email" id="emailLogin" placeholder="Ingresa tu email" required>
+      <input type="password" id="passLogin" placeholder="ingresa tu contraseña" required>
+      <input type="button" value="Ingresar" id="entrar">
+    </form>
+    <div id="buttons"></div>
+    <!--Contenido-->
+    <section id="root">
+
+    </section>
+    <!--CONFIGURACIÓN DEL FIREBASE-->
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
+    <script src="lib/firebaseConfig.js"></script>
+    <script type="module" src="main.js"></script>
+    <script src="lib/register.js"></script>
+    <script src="lib/login.js"></script>
+    <script src="lib/logOut.js"></script>
+  </body>
 
 </html>
