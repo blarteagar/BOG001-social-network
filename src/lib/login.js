@@ -2,10 +2,9 @@
 
 const login = (email, password) => {
 firebase.auth().signInWithEmailAndPassword(email, password).then(function() {
-  debugger
+  
    alert("bienvenido");
   }).catch(function (error) {
-    debugger
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
@@ -30,7 +29,7 @@ const LoginUser = () => {
   let loginEmail = document.getElementById("emailLogin").value;
   let loginPass = document.getElementById("passLogin").value;
   loginEmail.trim()
-  debugger
+  
   var validEmail = new RegExp(profileEmailValidator.pattern)
   if(validEmail.test(loginEmail) && loginPass.length >= profilePasswordValidator.minLength){
       login(loginEmail, loginPass);
