@@ -12,7 +12,7 @@
   <main id="mainContent">
   <h1>TechMe</h1>
   <h2>¡Únete a nuestra Red Social de Developers!</h2>
-
+  
   <br>
 
   <a href="#/Register">Crear Cuenta</a> 
@@ -21,17 +21,17 @@
   <h1 id="userName"></h1>
 
   <body>
-    <form>
+    <!-- <form>
       <input type="button" value="Iniciar con google" id="signIn">
       <input type="text" id="nameRegister" placeholder="Nombre">
       <input type="email" id="emailRegister" placeholder="Email">
       <input type="password" id="passRegister" placeholder="Crea tu contraseña">
-    </form>
-    <form id="form">
+    </form> -->
+    <!-- <form id="form">
       <input type="email" id="emailLogin" placeholder="Ingresa tu email" required>
       <input type="password" id="passLogin" placeholder="ingresa tu contraseña" required>
       <input type="button" value="Ingresar" id="entrar">
-    </form>
+    </form> -->
     <div id="buttons"></div>
     <!--Contenido-->
     <section id="root">
@@ -44,12 +44,14 @@
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
     
-    <script type="module"src="lib/firebaseConfig.js"></script>
+    <script src="1fireFunctions/firebaseConfig.js"></script>
     <script type="module" src="main.js"></script>
-    <script type="module" src="lib/register.js"></script>
-    <script type="module" src="lib/login.js"></script>
-    <script type="module" src="lib/logOut.js"></script>
-    <script type="module" src="lib/validations.js"></script>
+    <script type="module" src="2Login/login.js"></script>
+    <script type="module" src="google/googleDom.js"></script>
+    <script type="module" src="logout/logout.js"></script>
+    <script type="module" src="register/register.js"></script>
+    <script type="module" src="router.js"></script>
+    
   </body>
 
 </html>

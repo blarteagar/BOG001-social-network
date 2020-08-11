@@ -1,6 +1,6 @@
-import { userRegister } from "./register.js";
+import signOut from "/1fireFunctions/signOut.js";
 
-
+// Función UserLogout:
 let buttons = document.getElementById("buttons");
 
 // Observador:
@@ -28,20 +28,8 @@ firebase.auth().onAuthStateChanged(function (user) {
     }
 });
 
-// LogOut function de Firebase:
-function logOut() {
-
-    firebase.auth().signOut().then(function () {
-        // Sign-out successful.
-    }).catch(function (error) {
-        // An error happened.
-    });
-}
-
-// Función UserLogout:
-
 function userLogout() {
     let btnLogOut = document.getElementById("btnLogout");
-    btnLogOut.addEventListener("click", logOut);
+    btnLogOut.addEventListener("click", signOut);
 }
 
