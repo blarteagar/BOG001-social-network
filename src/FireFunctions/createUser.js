@@ -1,11 +1,12 @@
- export const register = (email, password) => {
-  firebase.auth().createUserWithEmailAndPassword(email, password).then((userRes) => {
+
+export const createUser = (email, password) => {
+  firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
   var user = firebase.auth().currentUser;
   user.sendEmailVerification().then(function() {
   console.log(user);
   // Email sent.
   alert("Hemos enviado un correo de verificación, por favor valida tu cuenta para continuar.");
-  return user;
+   return user;
 });
   }).catch(function(error) {
     // Handle Errors here.
@@ -30,12 +31,4 @@
   });
 }
 
-export const userRegister = () => {
-  let userEmail = document.getElementById("emailRegister").value;
-  let userPassword = document.getElementById("passRegister").value;
-  userEmail.trim()
-  register(userEmail, userPassword)
-  console.log(userEmail);
-  console.log(userPassword);
-}
 

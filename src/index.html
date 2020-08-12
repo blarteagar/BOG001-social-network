@@ -9,49 +9,24 @@
 </head>
 
 <body>
-  <h1>TechMe</h1>
-  <h2>¡Únete a nuestra Red Social de Developers!</h2>
-
-  <br>
-
-  <a href="#/Home">Crear Cuenta</a> 
-  <a href="#/Wall">ENTRAR</a>
-
-  <h1 id="userName"></h1>
-
-  <body>
-    <form>
-      <input type="button" value="crear cuenta con google" id="singIn">
-      <input type="text" id="nameRegister" placeholder="Nombre">
-      <input type="email" id="emailRegister" placeholder="Email">
-      <input type="password" id="passRegister" placeholder="Crea tu contraseña">
-    </form>
-    <form id="form">
-      <input type="email" id="emailLogin" placeholder="Ingresa tu email" required>
-      <input type="password" id="passLogin" placeholder="ingresa tu contraseña" required>
-      <input type="button" value="Ingresar" id="entrar">
-    </form>
+  <main id="mainContent"></main>
+    <button id="btnPrueba">prueba</button>
     <div id="buttons"></div>
-    <!--Contenido-->
-    <section id="root">
+    <section id="root"></section>
 
-    </section>
-    <!--CONFIGURACIÓN DEL FIREBASE-->
-    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
-    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-firestore.js"></script>
-    
-    <script src="lib/firebaseConfig.js"></script>
+
+    <script src="FireFunctions/firebaseConfig.js"></script>
+    <script type="module" src="router.js"></script>
     <script type="module" src="main.js"></script>
-    <script type="module" src="lib/register.js"></script>
-    <script type="module" src="lib/login.js"></script>
-    <script type="module" src="lib/logOut.js"></script>
-    <script type="module" src="lib/indexRoutes.js"></script>
-    <script type="module" src="lib/homeView.js"></script>
-    <script type="module" src="lib/wallView.js"></script>
+    <script type="module" src="Login/login.js"></script>
+    <script type="module" src="Google/googleDom.js"></script>
+    <script type="module" src="Logout/logout.js"></script>
+    <script type="module" src="Register/register.js"></script>
     
-  </body>
+
+</body>
 
 </html>

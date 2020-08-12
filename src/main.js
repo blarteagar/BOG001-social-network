@@ -1,12 +1,4 @@
-// Este es el punto de entrada de tu aplicación
-//import { myFunction } from './lib/index.js';
+import {router} from "/router.js";
 
-import router from '/lib/indexRoutes.js'
-
-window.addEventListener('hashchange', ()=>{
-    router(window.location.hash)
- });
-
-
-
-
+window.addEventListener('load', () =>{router("#/login")});
+console.log(window.location.hash);
