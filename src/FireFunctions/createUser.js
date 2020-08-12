@@ -1,12 +1,13 @@
 
 export const createUser = (email, password) => {
   firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
-  var user = firebase.auth().currentUser;
-  user.sendEmailVerification().then(function() {
-  console.log(user);
-  // Email sent.
-  alert("Hemos enviado un correo de verificación, por favor valida tu cuenta para continuar.");
-   return user;
+    var user = firebase.auth().currentUser;
+    user.sendEmailVerification()
+    .then(function() {
+    console.log(user);
+    // Email sent.
+    alert("Hemos enviado un correo de verificación, por favor valida tu cuenta para continuar.");
+    return user;
 });
   }).catch(function(error) {
     // Handle Errors here.
