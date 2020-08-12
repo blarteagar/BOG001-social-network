@@ -1,7 +1,10 @@
-const register = ()=> { 
+const createCountView = ()=> { 
     let content = document.getElementById("root");
     content.innerHTML = '';
-    const viewText = `<h1>Crea Tu Cuenta</h1>
+    const viewText = `
+    <h1>TechMe</h1>
+    <h2>¡Únete a nuestra Red Social de Developers!</h2>
+    <h1>Crea Tu Cuenta</h1>
     <p>Ingresa tus datos para crear tu cuenta</p>
     <form>
       <input type="button" value="Iniciar con google" id="signIn">
@@ -15,39 +18,53 @@ const register = ()=> {
 
 };
 
-const registerView = () => {
-  let content = document.getElementById("root")//Llamando a la sección HTML donde mostraremos contenido
-  content.innerHTML = '';//Inicialmente el content va a estar vacío
-  const viewText = `<h1>Wall</h1>
-  <p>Bienvenido a tu muro de publicaciones</p>
+const loginView = () => {
+  let content = document.getElementById("root")
+  content.innerHTML = '';
+  const viewText = `<h1>Logearse</h1>
+  <h2>Ingresa tus credenciales</h2>
   <form id="form">
   <input type="email" id="emailLogin" placeholder="Ingresa tu email" required>
   <input type="password" id="passLogin" placeholder="ingresa tu contraseña" required>
   <input type="button" value="Ingresar" id="entrar">
   </form>`;
+  
+  
   const divElement = document.createElement('div');
-  divElement.innerHTML = viewText; //Inserción de viewText (un string) en el elemento con innerHTML
+  divElement.innerHTML = viewText;
   return divElement;
 };
 
+let btnPrueba=document.getElementById("btnPrueba");
 
-const router = () => {
+
+
+export const router = (route) => {
     
-    let route = window.location.hash; //este valor localiza un elemento hash en la ventana
-    let content = document.getElementById("root");//Llamando a la sección HTML donde mostraremos contenido
-    
+    //let route = window.location.hash; //este valor localiza un elemento hash en la ventana
+    let content = document.getElementById("root");
+    console.log(route);
     switch (route) {
-        case "#/Register": {
-            return content.appendChild(registerView());//Por el momento, retornamos "vistas"
+        case "#/createCount": {
+            
+            return content.appendChild(createCountView());
         }
-        case "#/Login": {
-            //Llamar a la función LogIn para que el usuario se loguee;
-            return content.appendChild(home());//Por el momento, retornamos "vistas"
+        case "#/login": {
+            window.location.hash="#/login"
+            return content.appendChild(loginView());
         }
         default:
             return console.log('404 Not Found');;
     }
 };
 
-window.addEventListener("hashchange", router);
+
+btnPrueba.addEventListener("click", ()=>{
+    window.location.hash="#/createCount"
+    router("#/createCount")});
+
+router(window.location.hash)
+
+
+//window.addEventListener("hashchange", router);
 

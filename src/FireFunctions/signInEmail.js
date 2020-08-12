@@ -1,4 +1,4 @@
-export default signInEmail = (email, password) => {
+export const signInEmail = (email, password) => {
 firebase.auth().signInWithEmailAndPassword(email, password).then(function() {
   
    alert("bienvenido");

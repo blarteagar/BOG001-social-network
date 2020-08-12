@@ -1,4 +1,4 @@
-import signInGoogle from "1fireFunctions/signInGoogle.js";
+import {signInGoogle} from "/FireFunctions/signInGoogle.js";
 
-const user = document.getElementById("signIn");
-user.addEventListener("click", signInGoogle);
+// const user = document.getElementById("signIn");
+// user.addEventListener("click", signInGoogle);

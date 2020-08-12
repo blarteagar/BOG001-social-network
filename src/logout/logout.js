@@ -1,6 +1,7 @@
-import signOut from "/1fireFunctions/signOut.js";
+import {signOut} from "/FireFunctions/signOut.js";
+import {loginUser} from "/Login/login.js";
 
-// Función UserLogout:
+
 let buttons = document.getElementById("buttons");
 
 // Observador:
@@ -24,7 +25,7 @@ firebase.auth().onAuthStateChanged(function (user) {
         console.log("no existe usuario");
         buttons.innerHTML = `<button id="btnRegister">REGRISTRARSE</button>`;
         let btnRegister = document.getElementById("btnRegister");
-        btnRegister.addEventListener("click", userRegister);
+        btnRegister.addEventListener("click", loginUser);
     }
 });
 

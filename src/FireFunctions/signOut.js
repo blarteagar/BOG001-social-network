@@ -1,4 +1,4 @@
-export default signOut = () => {
+export const signOut = () => {
 
     firebase.auth().signOut().then(function () {
         // Sign-out successful.

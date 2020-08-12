@@ -1,10 +1,9 @@
-import signInEmail from "./1fireFunctions/signInEmail.js";
+//Crear cuenta
+import {createUser} from "/FireFunctions/createUser.js";
 
-//Generando la vista Wall (módulo aparte con export default ()=>{} const Wall =>{})
 const userRegister = () => {
   let userEmail = document.getElementById("emailRegister").value;
   let userPassword = document.getElementById("passRegister").value;
-  userEmail.trim();
-  signInEmail(userEmail, userPassword);
+  createUser(userEmail, userPassword);
     
 }
