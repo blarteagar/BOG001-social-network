@@ -1,20 +1,3 @@
-<<<<<<< HEAD
-import {signInEmail}  from "/FireFunctions/signInEmail.js";
-
-export const loginUser = () => {
-
-    let loginEmail = document.getElementById("emailLogin").value;
-    let loginPass = document.getElementById("passLogin").value;
-    signInEmail(loginEmail, loginPass);
-    
-  }
-  
-  // let loginBtn = document.getElementById("entrar");
-  // loginBtn.addEventListener("click", loginUser)
-  
-  
-  
-=======
 import { loginGoogle, loginWithEmail } from "../FireFunctions/signInEmailGoogle.js";
 import { router } from "../router.js";
 
@@ -64,4 +47,3 @@ const loginComponent = () => {
 
 
 export default loginComponent;
->>>>>>> c170ea60f27f725685f258e13876ce6dc22a3326

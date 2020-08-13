@@ -1,15 +1,4 @@
 
-<<<<<<< HEAD
-export const createUser = (email, password) => {
-  firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
-    var user = firebase.auth().currentUser;
-    user.sendEmailVerification()
-    .then(function() {
-    console.log(user);
-    // Email sent.
-    alert("Hemos enviado un correo de verificación, por favor valida tu cuenta para continuar.");
-    return user;
-=======
 export const createUser = async (email, password) => {
   firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
   var user = firebase.auth().currentUser;
@@ -18,7 +7,6 @@ export const createUser = async (email, password) => {
   // Email sent.
   alert("Hemos enviado un correo de verificación, por favor valida tu cuenta para continuar.");
    return user;
->>>>>>> c170ea60f27f725685f258e13876ce6dc22a3326
 });
   }).catch(function(error) {
     // Handle Errors here.

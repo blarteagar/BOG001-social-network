@@ -1,90 +1,38 @@
-<<<<<<< HEAD
 import {registerView} from "./Register/register.js";
+import { auth } from "../FireFunctions/firebaseConfig.js";
+import login from "./Login/login.js";
 
+let btnPrueba=document.getElementById("btnPrueba");
+btnPrueba.addEventListener("click", ()=>{router("#/register")});
 
-const loginView = () => {
-  let content = document.getElementById("root")
-  content.innerHTML = '';
-  const viewText = `<h1>Logearse</h1>
-  <h2>Ingresa tus credenciales</h2>`;  
-  const divElement = document.createElement('div');
-  divElement.innerHTML = viewText;
-  return divElement;
-};
-
-export const  router = async (route) => {
+//window.addEventListener("hashchange", router);
+export const router =  async (route) => {
     
-    let content = document.getElementById("root");
-    console.log(route);
+    //let route = window.location.hash; //este valor localiza un elemento hash en la ventana
+    const content = document.getElementById("root");
+    
     switch (route) {
         case "#/register": {
             window.location.hash="#/register";
             content.innerHTML= registerView.render();
             await registerView.afterRender();
-        break 
-        }
-        case "#/login": {
-            window.location.hash="#/login"
-            return content.appendChild(loginView());
             break
-        }
-
-        case "" : {
-            
-            return content.appendChild(loginView());
-            break
-
+        } 
+        case "#/login":{
+            content.innerHTML =  login();
+            break;
         }
         default:
-            return console.log('404 Not Found');;
-            break
-    }
-};
-
-let btnPrueba=document.getElementById("btnPrueba");
-btnPrueba.addEventListener("click", ()=>{router("#/register")});
-
-=======
-import { auth } from "../FireFunctions/firebaseConfig.js";
-import login from "./Login/login.js";
-
-
- let btnPrueba=document.getElementById("btnPrueba");
-
-const createCountView = () => {
-return  '<h1>Registro</h1>'
-}
-
-
-export const router =  async (route) => {
-    
-    //let route = window.location.hash; //este valor localiza un elemento hash en la ventana
-    const content = document.getElementById("root");
-    debugger
-    switch (route) {
-        case "#/createCount": 
-                document.getElementById("root").innerHTML = createCountView();
+            //content.innerHTML(view);
+        
+                content.innerHTML =  login();
+                // window.location.href =  "http://localhost:5000/#/Login"
             break;
-          case "#/login":
-                document.getElementById("root").innerHTML =  login();
-                break;
-           default:
-                //content.innerHTML(view);
-                debugger
-                    document.getElementById("root").innerHTML =  login();
-                    // window.location.href =  "http://localhost:5000/#/Login"
-                break;
-        }
     }
+}
     
-
-btnPrueba.addEventListener("click", ()=>{
-    window.location.hash="#/createCount"
-    router("#/createCount")});
-
 router(window.location.hash);
 
 
-//window.addEventListener("hashchange", router);
->>>>>>> c170ea60f27f725685f258e13876ce6dc22a3326
+
 
