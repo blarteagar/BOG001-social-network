@@ -1,25 +1,5 @@
-import print from './wall/print.js'
 import wall from './wall/wall.js'
 
-//VistaCrearCuenta
-const createCountView = () => {
-    let content = document.getElementById("root");
-    content.innerHTML = '';
-    const viewText = `
-    <h1>TechMe</h1>
-    <h2>¡Únete a nuestra Red Social de Developers!</h2>
-    <h1>Crea Tu Cuenta</h1>
-    <p>Ingresa tus datos para crear tu cuenta</p>
-    <form>
-      <input type="button" value="Iniciar con google" id="signIn">
-      <input type="text" id="nameRegister" placeholder="Nombre">
-      <input type="email" id="emailRegister" placeholder="Email">
-      <input type="password" id="passRegister" placeholder="Crea tu contraseña">
-    </form>`;
-    const divElement = document.createElement('div');
-    divElement.innerHTML = viewText;
-    return divElement;
-};
 import { userRegister } from "./Register/register.js";
 import exit from "./Logout/logout.js"
 
@@ -74,16 +54,6 @@ const loginView = () => {
     return divElement;
 };
 
-
-const divElement = document.createElement('div');
-divElement.innerHTML = viewText;
-return divElement;
-
-
-let btnPrueba = document.getElementById("btnPrueba");
-let btnWall = document.getElementById("btnWall");
-
-
 export const router = async (route) => {
 
     //let route = window.location.hash; //este valor localiza un elemento hash en la ventana
@@ -102,15 +72,13 @@ export const router = async (route) => {
             return content.appendChild(loginView());
             break
         }
-
-        case "": {
-
-            return content.appendChild(loginView());
+        case "#/wall": {
+            window.location.hash = "#/wall"
+            return content.appendChild(wall);
             break
-
         }
         default:
-            return console.log('404 Not Found');;
+            return console.log('404 Not Found');
             break
     }
 };
@@ -118,5 +86,7 @@ export const router = async (route) => {
 let btnPrueba = document.getElementById("btnPrueba");
 btnPrueba.addEventListener("click", () => { router("#/createCount") });
 
+let btnWall = document.getElementById("btnWall");
+btnWall.addEventListener("click", () => { router("#/wall") });
 
 
