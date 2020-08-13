@@ -1,4 +1,4 @@
-export const signOut = () => {
+export const signOut = async () => {
 
     firebase.auth().signOut().then(function () {
         // Sign-out successful.
