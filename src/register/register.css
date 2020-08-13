@@ -52,7 +52,7 @@ body {
 
 .whiteText {
     font-family: 'Catamaran', sans-serif;
-    color: #C4C4C4;
+    color: white;
     font-size: 2vh;
     margin: 3vh;
 
@@ -63,7 +63,7 @@ form {
     flex-direction: column;
     /*justify-content: space-between;*/
     width: 80%;
-    border: 1px solid #C4C4C4;
+    border: 1px solid white;
     height: fit-content;
     border-radius: 3px;
     margin: 5vw auto;
@@ -82,7 +82,7 @@ input {
     font-size: medium;
     color: white;
     background-color: #3A2C65;
-    border: 1px solid #C4C4C4;
+    border: 1px solid white;
     border-radius: 3px;
     margin: 10px 10px;
 }
