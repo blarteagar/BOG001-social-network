@@ -1,7 +1,8 @@
 
 const wall = () => {
-    document.getElementById("root").innerHTML = "";
-    viewWall =
+    let content = document.getElementById("root");
+    content.innerHTML = "";
+    let viewWall =
     `
     
     <section id = "mainWall">

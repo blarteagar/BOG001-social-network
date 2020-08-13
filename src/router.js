@@ -1,9 +1,6 @@
 import wall from './wall/wall.js'
 
-import { userRegister } from "./Register/register.js";
-import exit from "./Logout/logout.js"
-
-exit.signOut;
+import { userRegister } from "./register/register.js";
 
 const createCountView = {
 
@@ -73,8 +70,10 @@ export const router = async (route) => {
             break
         }
         case "#/wall": {
+            console.log(wall);
+            console.log(typeof(wall));
             window.location.hash = "#/wall"
-            return content.appendChild(wall);
+            return content.appendChild(wall());
             break
         }
         default:

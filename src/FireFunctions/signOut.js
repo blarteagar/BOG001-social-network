@@ -7,5 +7,3 @@ export const signOut = async () => {
         // An error happened.
     });
 }
-
-

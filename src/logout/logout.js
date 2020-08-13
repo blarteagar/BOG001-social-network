@@ -27,7 +27,7 @@ firebase.auth().onAuthStateChanged(function (user) {
     }
 });
 
-function userLogout() {
+ function userLogout() {
     let btnLogOut = document.getElementById("btnLogout");
     btnLogOut.addEventListener("click", signOut);
 }
