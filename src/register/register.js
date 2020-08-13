@@ -1,12 +1,10 @@
 import {createUser} from "/FireFunctions/createUser.js";
 import {signOutUser} from "/FireFunctions/signOut.js";
 
-
 const userRegister = () => {
   let userEmail = document.getElementById("emailRegister").value;
   let userPassword = document.getElementById("passRegister").value;
   createUser(userEmail, userPassword);
-    
 }
 
 export const registerView = { 

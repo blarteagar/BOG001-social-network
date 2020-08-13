@@ -1,4 +1,4 @@
-export const signOutUser = () => {
+export const signOutUser = async () => {
 
     firebase.auth().signOut().then(function () {
         // Sign-out successful.
@@ -7,7 +7,6 @@ export const signOutUser = () => {
         // An error happened.
     });
 }
-
 
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
