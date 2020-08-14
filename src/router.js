@@ -1,14 +1,10 @@
-import {registerView} from "./Register/register.js";
-import { auth } from "../FireFunctions/firebaseConfig.js";
-import login from "./Login/login.js";
+import {registerView} from "./register/register.js";
+import login from "./login/login.js";
+import wall from './wall/wall.js';
 
-let btnPrueba=document.getElementById("btnPrueba");
-btnPrueba.addEventListener("click", ()=>{router("#/register")});
 
-//window.addEventListener("hashchange", router);
 export const router =  async (route) => {
     
-    //let route = window.location.hash; //este valor localiza un elemento hash en la ventana
     const content = document.getElementById("root");
     
     switch (route) {
@@ -19,19 +15,31 @@ export const router =  async (route) => {
             break
         } 
         case "#/login":{
+            window.location.hash="#/login";
             content.innerHTML =  login();
             break;
         }
+        case "#/wall": {
+            console.log(wall);
+            console.log(typeof(wall));
+            window.location.hash = "#/wall"
+            return content.appendChild(wall());
+            break
+        }
         default:
-            //content.innerHTML(view);
-        
-                content.innerHTML =  login();
-                // window.location.href =  "http://localhost:5000/#/Login"
+            content.innerHTML =  login();
             break;
     }
 }
     
 router(window.location.hash);
+
+let btnPrueba=document.getElementById("btnPrueba");
+btnPrueba.addEventListener("click", ()=>{router("#/register")});
+
+let btnWall = document.getElementById("btnWall");
+btnWall.addEventListener("click", () => { router("#/wall") });
+
 
 
 
