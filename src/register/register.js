@@ -5,13 +5,13 @@ import {router} from "../router.js";
 export const userRegister = async () => {
   let userEmail = document.getElementById("emailRegister").value;
   let userPassword = document.getElementById("passRegister").value;
-  createUser(userEmail, userPassword);
+  await createUser(userEmail, userPassword);
   router("#/wall");
 }
 
 export const registerView = { 
 
-  render: ()=> {
+  render: async ()=> {
       let root = document.getElementById("root");
       root.innerHTML = '';
       const view =
@@ -35,7 +35,7 @@ export const registerView = {
       return view;
       },
 
-  afterRender: async ()=> {
+  afterRender: ()=> {
       let btnRegister = document.getElementById("btnRegister");
       btnRegister.addEventListener("click", userRegister);
 

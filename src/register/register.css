@@ -20,12 +20,6 @@ html, #root, body, .box-register {
     grid-gap: 0px;
     background-color: #3A2C65;
 }   
-   
-
-
-
-
-
 
 .techMeRegister{
     grid-column-start: 3;
@@ -45,7 +39,7 @@ html, #root, body, .box-register {
     color: #50C5B7;
     font-family: Catamaran;
     font-style: normal;
-    font-weight: normal;
+    font-weight: bold;
     font-size: 14px;
     line-height: 23px;
     

@@ -3,16 +3,16 @@ import login from "./login/login.js";
 import wall from './wall/wall.js';
 
 
-export const router =  async (route) => {
+export const router = async (route) => {
     
     const content = document.getElementById("root");
     
     switch (route) {
         case "#/register": {
             window.location.hash="#/register";
-            content.innerHTML= registerView.render();
-            await registerView.afterRender();
-            break
+            content.innerHTML= await registerView.render();
+            registerView.afterRender();
+            break;
         } 
         case "#/login":{
             window.location.hash="#/login";
@@ -34,11 +34,8 @@ export const router =  async (route) => {
     
 router(window.location.hash);
 
-let btnPrueba=document.getElementById("btnPrueba");
-btnPrueba.addEventListener("click", ()=>{router("#/register")});
-
-let btnWall = document.getElementById("btnWall");
-btnWall.addEventListener("click", () => { router("#/wall") });
+// let btnWall = document.getElementById("btnWall");
+// btnWall.addEventListener("click", () => { router("#/wall") });
 
 
 
