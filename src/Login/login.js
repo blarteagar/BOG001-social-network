@@ -4,18 +4,19 @@ import { router } from "../router.js";
 const loginComponent = () => {
  let view =  `
  <div class='box-login'>
- <h1>TechMe</h1>
- <h2>¡Únete a nuestra Red Social de Developers!</h2>
- <p>Ingresa tus datos para crear tu cuenta</p>
+ <h1 class="tech"> | Tech<span class="me">Me</span> </h1>
+ <h2 class="greenTex">¡Únete a nuestra Red Social de Developers!</h2>
+  
  <form>
+ <a href= "#/register"  type= "button"  id="loginGoogle"  class="btn1">ingresa con google</a>
+ <img class="icono" src="img/google.png" alt="">
  <input type="email" id="emailLogin" placeholder="Ingresa tu email" required>
  <input type="password" id="passLogin" placeholder="ingresa tu contraseña" required>
- <input type="button" value="Ingresar" id="loginButton">
- <input type="button" value="Ingresar con google" id="loginGoogle">
- <div id="userRegister">Crea Tu Cuenta</div>
+ <a href= "#/register"  type= "button"  id="userRegister" class="btn2">crear tu cuenta</a>
+ <button id="loginButton">ENTRAR</button>
  </form>
- </div>
- `;
+ </div> 
+ `;  
 
  const LoginWithEmailAndPassword = () => {
     let loginEmail = document.getElementById("emailLogin").value;
@@ -30,15 +31,24 @@ const loginComponent = () => {
             loginGoogle()
             //window.location.hash="#/createCount"
               break;
-           case "loginButton":
+           case "loginButton":{
+
+           
             LoginWithEmailAndPassword();
             break;
-            case "userRegister":
-               window.location.hash="#/createCount"
-               router("#/createCount")
+           }
+            case "userRegister":{ 
+               window.location.hash="#/register"
+               router("#/register")
             break;
+            }
+            case "entrar":{ 
+                window.location.hash="#/register"
+               router("#/register")
+               break;
+            }
            default:
-              break;
+              
         }
      }
  })
