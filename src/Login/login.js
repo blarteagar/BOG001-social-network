@@ -4,8 +4,8 @@ import { router } from "../router.js";
 const loginComponent = () => {
  let view =  `
  <div class='box-login'>
- <h1 class="tech"> | Tech<span class="me">Me</span> </h1>
- <h2 class="greenTex">¡Únete a nuestra Red Social de Developers!</h2>
+  <div class="|TECHME"> <h1 class="tech"> | Tech<span class="me">Me</span> </h1> </div>
+ <div class="description"> <h2 class="greenTex">¡Únete a nuestra Red Social de Developers!</h2></div>
   
  <form>
  <a href= "#/register"  type= "button"  id="loginGoogle"  class="btn1">ingresa con google</a>
@@ -32,9 +32,7 @@ const loginComponent = () => {
             //window.location.hash="#/createCount"
               break;
            case "loginButton":{
-
-           
-            LoginWithEmailAndPassword();
+             LoginWithEmailAndPassword();
             break;
            }
             case "userRegister":{ 

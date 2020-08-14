@@ -6,19 +6,34 @@
     box-sizing:border-box;
     margin: 0;
     padding: 0;
+    
 }
 
 body {
+    text-align: center;
     height: 100%;
     width: 100%;
     background-color: #3A2C65;
 }
 
 .box-login{
-    text-align: center;
-    display: flex;
+    
+    display: grid;
     justify-content: center;
-    flex-direction: column;
+    grid-template-columns: repeat(10, 10%);
+    grid-template-rows: repeat(10, 10%);
+    grid-gap: 0%;
+     
+     
+}
+
+.TECHME{
+    
+    grid-column-start: 2;
+    grid-column-end: 8;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    
 }
 
 .tech {
@@ -32,6 +47,19 @@ body {
     color: #CBEF43;
     font-size: 8vh;
 
+
+}
+
+.description{
+    display: grid;
+    padding: 16px;
+    grid-auto-rows: auto;
+    grid-auto-columns: auto;
+    grid-gap: 15px;
+    grid-column-start: 2;
+    grid-column-end: 8;
+    grid-row-start: 2;
+    grid-row-end: 3;
 
 }
 
@@ -89,7 +117,7 @@ button {
 
 .btn1{
   
-   align-self: center;
+   
    color: #D6D3D3;
    font-family: 'Chakra Petch', sans-serif;
    border: 0px;
@@ -110,7 +138,7 @@ button {
 
 .btn2{
     
-    align-self: center;
+    
     font-family: 'Chakra Petch', sans-serif;
     color: #CBEF43;
     border: 0px;

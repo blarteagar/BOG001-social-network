@@ -1,7 +1,7 @@
-import { auth  } from "./firebaseConfig.js";
+
 
 export const loginWithEmail = async (email, password) => {
-  auth.signInWithEmailAndPassword(email, password).then(function() {
+  firebase.auth().signInWithEmailAndPassword(email, password).then(function() {
     
      alert("bienvenido");
     }).catch(function (error) {
@@ -29,7 +29,7 @@ export const loginWithEmail = async (email, password) => {
   }
   
   export const loginGoogle = async () => {
-    if (auth.currentUser == null) {
+    if (firebase.auth().currentUser == null) {
       var provider = new firebase.auth.GoogleAuthProvider();
       provider.addScope('https://www.googleapis.com/auth/plus.login');
       auth.signInWithPopup(provider).then(function (result) {
