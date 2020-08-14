@@ -1,5 +1,4 @@
 import {registerView} from "./Register/register.js";
-import { auth } from "../FireFunctions/firebaseConfig.js";
 import login from "./Login/login.js";
 
 let btnPrueba=document.getElementById("btnPrueba");
@@ -16,7 +15,7 @@ export const router =  async (route) => {
             window.location.hash="#/register";
             content.innerHTML= registerView.render();
             await registerView.afterRender();
-            break
+            break;
         } 
         case "#/login":{
             content.innerHTML =  login();
