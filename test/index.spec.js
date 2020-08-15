@@ -51,12 +51,12 @@ describe("loginGoogle", () => {
     })
   })
   it("deberia salir un error cuando no termino de hacer el login con google", () => {
-    return loginGoogle("no terminaste el login").catch((error) => {
+    return loginGoogle("provaider").catch((error) => {
       expect(error).toBe("error no terminaste de hacer el login con google");
     })
   })
   it("deberia salir un error cuando ya estas logeado con email y password", () => {
-    return loginGoogle("ya estas registrado con este correo").catch((error) => {
+    return loginGoogle("provaider").catch((error) => {
       expect(error).toBe("error ya te encuentras registado con correo eletronico");
     });
   });
