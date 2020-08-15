@@ -1,39 +1,63 @@
 // importamos la funcion que vamos a testear
 //import { register } from "../src/firebaseFunctions/register.js";
-import  MockLogin from  "../src/_mocks_/mockLogin"
-import { loginWithEmail } from "../src/FireFunctions/signInEmailGoogle.js";
+import MockLogin from "../src/_mocks_/mockLogin"
+import { loginWithEmail } from "../src/FireFunctions/signInEmailGoogle"
+import { loginGoogle } from "../src/FireFunctions/signInEmailGoogle"
 global.firebase = MockLogin();
 
 
-//jest.mock("../src/lib/register.js");
-
-// describe('register', () => {
-//   it('debería ser una función', () => {
-//     expect(typeof register).toBe('function');
-//   });
-
-//   it('El correo del usuario 1 es válido', () => {
-//     return register("carosuarez90@gmail.com", "123456789").then(user => {
-//       expect(user.email).toBe("carosuarez90@gmail.com");
-//     })
-//   })
-// // });
-
-// test('the data is peanut butter', () => {
-//   return fetchData().then(data => {
-//     expect(data).toBe('peanut butter');
-//   });
-// });
 
 
 describe("loginWithEmail", () => {
-it("deberia ser una funcion", () => {
-expect(typeof loginWithEmail ).toBe('function');
-
-it("deberia poder iniciar seccion con email: dora@gmail.com y password:123456789", () => {
-  return loginWithEmail(email, password).then((data) =>{
-    expect(data).toBe("email, password");
+  it("deberia ser una funcion", () => {
+    expect(typeof loginWithEmail).toBe('function');
   })
-})
-})
-}) 
+
+  it("deberia poder iniciar seccion con correo:dora@gmail.com y contraseña:123456789", () => {
+    return loginWithEmail("dora@gmail.com", "123456789").then((data) => {
+      expect(data).toBe("bienvenido");
+
+    })
+  })
+
+  it("deberia dar un error para este correo", () => {
+    return loginWithEmail("dora.gmail.com").catch((error) => {
+      expect(error).toBe("Por favor introduce un correo válido")
+
+    })
+  })
+
+  it("deberia dar un error para este contraseña", () => {
+    return loginWithEmail("1234").catch((error) => {
+      expect(error).toBe("error contraseña incorrecta")
+    });
+  });
+});
+
+
+
+
+
+describe("loginGoogle", () => {
+  it("deberia ser una funcion", () => {
+    expect(typeof loginGoogle).toBe('function');
+  })
+
+  it("deberia recibir un oject de respuesta exitosa  del provaider al iniciar seccion con google", () => {
+    return loginGoogle("provaider").then(() => {
+      const result = ["client_id", "response_type", "scope", "redirect_uri", "state"]
+      expect(typeof result).toBe("object");
+
+    })
+  })
+  it("deberia salir un error cuando no termino de hacer el login con google", () => {
+    return loginGoogle("no terminaste el login").catch((error) => {
+      expect(error).toBe("error no terminaste de hacer el login con google");
+    })
+  })
+  it("deberia salir un error cuando ya estas logeado con email y password", () => {
+    return loginGoogle("ya estas registrado con este correo").catch((error) => {
+      expect(error).toBe("error ya te encuentras registado con correo eletronico");
+    });
+  });
+});

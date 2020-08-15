@@ -19,7 +19,6 @@ body {
 .box-login{
     
     display: grid;
-    justify-content: center;
     grid-template-columns: repeat(10, 10%);
     grid-template-rows: repeat(10, 10%);
     grid-gap: 0%;
@@ -32,7 +31,7 @@ body {
     grid-column-start: 2;
     grid-column-end: 8;
     grid-row-start: 2;
-    grid-row-end: 3;
+    grid-row-end: 4;
     
 }
 
@@ -50,18 +49,7 @@ body {
 
 }
 
-.description{
-    display: grid;
-    padding: 16px;
-    grid-auto-rows: auto;
-    grid-auto-columns: auto;
-    grid-gap: 15px;
-    grid-column-start: 2;
-    grid-column-end: 8;
-    grid-row-start: 2;
-    grid-row-end: 3;
-
-}
+ 
 
 .greenTex {
     font-family: 'Catamaran', sans-serif;
@@ -72,11 +60,11 @@ body {
 
 }
 
-
+/* 
 form {
     display: flex;
     flex-direction: column;
-    /*justify-content: space-between;*/
+    /*justify-content: space-between;
     width: 80%;
     border: 1px solid white;
     height: fit-content;
@@ -113,7 +101,7 @@ button {
 
     
     
-}
+} */
 
 .btn1{
   
