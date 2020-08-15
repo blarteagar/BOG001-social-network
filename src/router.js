@@ -24,7 +24,7 @@ export const router = async (route) => {
             console.log(typeof(wall));
             window.location.hash = "#/wall"
             return content.appendChild(wall());
-            break
+            break;
         }
         default:
             content.innerHTML =  login();
