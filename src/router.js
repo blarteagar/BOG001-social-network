@@ -1,12 +1,10 @@
 import {registerView} from "./register/register.js";
-import login from "./login/login.js";
+import {loginComponent} from "./login/login.js";
 import wall from './wall/wall.js';
-
 
 export const router = async (route) => {
     
     const content = document.getElementById("root");
-    
     switch (route) {
         case "#/register": {
             window.location.hash="#/register";
@@ -15,8 +13,9 @@ export const router = async (route) => {
             break;
         } 
         case "#/login":{
-            window.location.hash="#/login";
-            content.innerHTML =  login();
+            //window.location.hash="#/login";
+            content.innerHTML = await loginComponent.render();
+            loginComponent.afterRender();
             break;
         }
         case "#/wall": {
@@ -27,7 +26,8 @@ export const router = async (route) => {
             break;
         }
         default:
-            content.innerHTML =  login();
+            content.innerHTML = await loginComponent.render();
+            loginComponent.afterRender();
             break;
     }
 }

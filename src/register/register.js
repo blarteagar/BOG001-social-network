@@ -38,7 +38,5 @@ export const registerView = {
   afterRender: ()=> {
       let btnRegister = document.getElementById("btnRegister");
       btnRegister.addEventListener("click", userRegister);
-
-      
     }  
 }
