@@ -5,27 +5,23 @@ export const createUser = async (email, password) => {
   user.sendEmailVerification().then(function() {
   console.log(user);
   // Email sent.
-  alert("Hemos enviado un correo de verificación, por favor valida tu cuenta para continuar.");
-   return user;
+  return "Hemos enviado un correo de verificación, por favor valida tu cuenta para continuar.";
 });
   }).catch(function(error) {
     // Handle Errors here.
     var errorCode = error.code; 
     var errorMessage = error.message;
     
-    console.log(error.credential)
-    console.log(errorCode);
-    console.log(errorMessage);
+    // console.log(error.credential)
+    // console.log(errorCode);
+    // console.log(errorMessage);
    
-    if(errorCode=="auth/invalid-email")
-    {alert("Por favor introduce un correo válido");
-      return errorCode;      
+    if(errorCode=="auth/invalid-email"){ 
+      return "Por favor introduce un correo válido";      
     } else if (errorCode=="auth/email-already-in-use"){
-       alert("Este correo ya está registrado");
-      return errorCode;    
+        return "Este correo ya está registrado" ;    
     } else{
-      alert("La contraseña debe tener mínimo 6 caracteres");
-      return errorCode;
+        return "La contraseña debe tener mínimo 6 caracteres";
     }
     // ...
   });

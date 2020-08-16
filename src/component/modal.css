@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap');
+
 .modal {
     display: none; 
     position: fixed; 
-    z-index: 1;
+    z-index: 3;
     left: 0;
     top: 0;
     width: 100%; 
@@ -18,6 +20,7 @@
       text-align: center;
       background-color: #3A2C65;
       border: 1px solid #C4C4C4;
+      border-width: 2px 2px;
       border-radius: 10px;
       box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     }
@@ -30,23 +33,25 @@
   }
   
   .close:hover, .close:focus {
-    color:  #C4C4C4;
+    color:  #77136f;
     text-decoration: none;
     cursor: pointer;
   }
   
   .modal-header {
-    margin-bottom: 0;
     display: grid;
+    margin-bottom: 0;
     grid-template-columns: 10fr 1fr;
     grid-gap: 0;
     background-color:#A43A9A;
     border: 1px solid #C4C4C4;
     border-width: 1px 1px;
+    border-radius: 5px;
   }
   
   .modal-header h2{
-    font-size: 22px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 20px;
   }
   
   .modal-body, #contentElement {
@@ -58,16 +63,15 @@
   
   #contentElement div{
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-rows: 2fr;
   }
   
    p{
-    font-size: 20px;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 18px;
   }
   
-  .box-login{
-    text-align: center;
-  }
+   
 
 @media screen and (min-width: 740px){
     
@@ -82,7 +86,7 @@
       padding: 10px;
       max-width: 500px;
       max-height: 300px;
-      grid-template-columns: 1fr;
+      grid-template-rows: 3fr;
     }
   
     
