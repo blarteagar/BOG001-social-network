@@ -7,7 +7,7 @@ export const userRegister = async () => {
   let userEmail = document.getElementById("emailRegister").value;
   let userPassword = document.getElementById("passRegister").value;
   let statusRegister = await createUser(userEmail, userPassword);
-  loadModal("Bienvenido", statusRegister);
+  loadModal(statusRegister.title, statusRegister.message);
   router("#/wall");
 }
 
