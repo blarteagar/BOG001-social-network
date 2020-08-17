@@ -3,7 +3,7 @@
 .modal {
     display: none; 
     position: fixed; 
-    z-index: 3;
+    z-index: 1;
     left: 0;
     top: 0;
     width: 100%; 
@@ -20,8 +20,8 @@
       text-align: center;
       background-color: #3A2C65;
       border: 1px solid #C4C4C4;
-      border-width: 2px 2px;
-      border-radius: 10px;
+      border-width: 1px 1px;
+      border-radius: 5px;
       box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     }
   
@@ -40,18 +40,21 @@
   
   .modal-header {
     display: grid;
-    margin-bottom: 0;
+    margin-bottom: 0px;
     grid-template-columns: 10fr 1fr;
     grid-gap: 0;
     background-color:#A43A9A;
     border: 1px solid #C4C4C4;
     border-width: 1px 1px;
-    border-radius: 5px;
+    border-radius: 3px;
   }
   
   .modal-header h2{
     font-family: 'Chakra Petch', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
+    margin: auto;
+    text-align: center;
+    align-items: center;
   }
   
   .modal-body, #contentElement {
@@ -64,28 +67,30 @@
   #contentElement div{
     display: grid;
     grid-template-rows: 2fr;
+    text-align: center;
+    align-items: center;
   }
   
    p{
     font-family: 'Chakra Petch', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
   }
   
    
 
-@media screen and (min-width: 740px){
-    
+/* @media screen and (min-width: 740px){ */
+  @media (min-width: 740px) and (max-width: 2560px) {   
      
     .modal-content{
-      max-width: 500px;
-      max-height: 320px;
+      max-width: 800px;
+      max-height: 700px;
     }
   
     .modal-body {
       display: grid;
       padding: 10px;
-      max-width: 500px;
-      max-height: 300px;
+      max-width: 800px;
+      max-height: 700px;
       grid-template-rows: 3fr;
     }
   

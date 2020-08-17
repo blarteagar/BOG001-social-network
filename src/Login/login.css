@@ -55,16 +55,28 @@ body {
 
 }
 
+.greenTex {
+    font-family: 'Catamaran', sans-serif;
+    font-weight: bold;
+    color: #50C5B7;
+    font-size: 2.5vh;
+    margin: 0 5vw;
+
+}
+
+
 .techLogin {
     font-family: 'Chakra Petch', sans-serif;
     color: #F515E0;
     font-size: 7vh;
 }
 
-.me {
-    font-family: 'Cabin Sketch', cursive;
+.MeLogin {
+    font-family: 'Cabin Sketch';
     color: #CBEF43;
     font-size: 7vh;
+    font-style: normal;
+    font-weight: normal;
 
 
 }
@@ -76,11 +88,14 @@ body {
 
 form{
     grid-column-start: 2;
-    grid-column-end:9;
+    grid-column-end: 10;
     grid-row-start: 2;
-    grid-row-end: 2;
-
+    grid-row-end: 3;
+    width: 100%;
+    height: 100%;
+    
 }
+ 
 
 
 .FormLogin{
@@ -98,15 +113,15 @@ form{
     margin-top: 10px;
 }
 
+ 
+ 
 .InputLogin{
-    grid-column-start: 2;
-    grid-column-end: 9;
-    grid-row-start: 2;
-    grid-row-end: 2; 
-    width: 89%;
-    margin-top: 14px;
-    margin-bottom: 2%;
-    height: auto;
+    
+    
+    width: -webkit-fill-available;
+    height:  -webkit-fill-available;
+    margin-top: auto;
+    margin-bottom: 8%;
     font-family: 'Catamaran', sans-serif;
     font-size: medium;
     color: white;
@@ -114,45 +129,23 @@ form{
     border: 1px solid white;
     border-radius: 3px;
     padding: 4.5px;
-}
-
-
- 
-
-.greenTex {
-    font-family: 'Catamaran', sans-serif;
-    font-weight: bold;
-    color: #50C5B7;
-    font-size: 2.5vh;
-    margin: 0 5vw;
-
-}
-
- 
-.loginButton {
     
+}
+
+
+ .google{
+
     grid-column-start: 2;
-    grid-column-end: 5;
-    grid-row-start: 5;
-    grid-row-end: 5;
-    height: 5vh;
-    font-family: 'Catamaran', sans-serif;
-    text-align: center;
-    font-weight: bold;
-    background-color: #A43A9A;
-    border: 1px solid #C4C4C4;
-    border-radius: 3px;
-    color: #C4C4C4;
-    width: 41%;
-    margin-top: 20px;
-}
-  
+    grid-column-end: 10;
+    grid-row-start: 7;
+    grid-row-end: 7;
+    margin: auto;
+    display: flex;
 
-    
-    
+ }
 
-
-.btn1{
+ 
+ .btn1{
   
   grid-column-start: 4;
   grid-column-end: 9;
@@ -181,18 +174,54 @@ form{
     
 }
 
-.btn2{
-    
+ .actionsLogin{
+
+    margin-top: 4vh;
+     /* flex-direction: column;
+     grid-row-start: 7;
     grid-column-start: 2;
-    grid-column-end: 4;
-    grid-row-start: 13;
-    grid-row-end: 14;
+    grid-column-end: 9;
+    grid-template-columns: repeat(10, 10%);
+    grid-template-rows: repeat(3,10%);
+    grid-gap: 10%; */
+}
+
+    /* grid-template-columns: repeat(2, 33%);
+    grid-gap: 33%;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center; */
+     
+     
     
+
+
+.loginButton {
+    width: 26vw;
+    height: auto;
+    font-family: 'Catamaran', sans-serif;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #A43A9A;
+    border: 1px solid #C4C4C4;
+    border-radius: 3px;
+    color: #C4C4C4;
+    margin-left: 5%;
+     
+}
+
+.btn2{
+    grid-column-start: 1;
+    width: 47%;
+    height: 5vh;
     font-family: 'Chakra Petch', sans-serif;
+    font-size: 14px;
     color: #CBEF43;
     border: 0px;
     text-decoration: underline;
     margin: auto;
+    margin-bottom: 5px;
 }
 
 .Img{
@@ -210,11 +239,7 @@ form{
  
 }
  
-.actionsLogin{
-    flex-direction: row;
-    margin-top: 2vh;
  
-}
 
 
 /* 
