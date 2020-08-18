@@ -1,59 +1,54 @@
 import { loginGoogle, loginWithEmail } from "../FireFunctions/signInEmailGoogle.js";
 import { router } from "../router.js";
+import { loadModal, closeModal } from "../component/modal.js";
+ 
 
-const loginComponent = () => {
- let view =  `
- <div class='box-login'>
- <h1 class="tech"> | Tech<span class="me">Me</span> </h1>
- <h2 class="greenTex">¡Únete a nuestra Red Social de Developers!</h2>
-  
- <form>
- <a href= "#/register"  type= "button"  id="loginGoogle"  class="btn1">ingresa con google</a>
- <img class="icono" src="img/google.png" alt="">
- <input type="email" id="emailLogin" placeholder="Ingresa tu email" required>
- <input type="password" id="passLogin" placeholder="ingresa tu contraseña" required>
- <a href= "#/register"  type= "button"  id="userRegister" class="btn2">crear tu cuenta</a>
- <button id="loginButton">ENTRAR</button>
- </form>
- </div> 
- `;  
+export const LoginWithEmailAndPassword = async () => {
+   debugger
+   let loginEmail = document.getElementById("emailLogin").value;
+   let loginPass = document.getElementById("passLogin").value;
+   let statusLogin = await loginWithEmail(loginEmail, loginPass);
+   loadModal(statusLogin.title, statusLogin.message);
+ }
 
- const LoginWithEmailAndPassword = () => {
-    let loginEmail = document.getElementById("emailLogin").value;
-    let loginPass = document.getElementById("passLogin").value;
-    loginWithEmail(loginEmail, loginPass);
+ export const RedirectToRegister = () => {
+   window.location.hash = "#/register"
+   router("#/register")
+ }
+
+export const loginComponent = {
+   render: async () => {
+      const view = `
+      <div class='box-login'>
+       <div class="TechMeLogin"> <h1 class="techLogin"> | Tech<span class="MeLogin">Me</span> </h1> </div>
+      <div class="WelcomeLogin"> <h2 class="greenTex">¡Únete a nuestra Red Social de Developers!</h2></div>
+       <div class="google">
+       <img class="icono" src="img/google.png" alt="google">
+       <a href= ""  type= "button"  id="loginGoogleid"  class="btn1">ingresa con google</a>
+       </div>
+      <div class="FormLogin">
+      <div class="box-form">
+      <form>
+      <input class="InputLogin" type="email" id="emailLogin" placeholder="Ingresa tu email" required>
+      <input class="InputLogin" type="password" id="passLogin" placeholder="Ingresa tu contraseña" required>
+      </form>
+      </div>
+      <div class = "actionsLogin">
+      <a href= "#/register" class="btn2"  type= "button"  id="userRegister">crear tu cuenta</a>
+      <input type="button" class="loginButton" id="loginButton" value="ENTRAR"/>
+      </div> 
+      </div>
+      <img class="Img" src="img/people.jpg" alt="people">
+      </div> 
+      `  
+      return view;
+   },
+   afterRender: () => {
+      let loginGoogleItem = document.getElementById("loginGoogleid");
+      loginGoogleItem.addEventListener('click',loginGoogle);
+      let loginEmail = document.getElementById("loginButton")
+      loginEmail.addEventListener('click',LoginWithEmailAndPassword)
+      let userRegister = document.getElementById("userRegister")
+      userRegister.addEventListener('click',RedirectToRegister)
    }
-
- document.addEventListener('click', (e)  => {
-     if(e.target){
-      switch (e.target.id) {
-           case "loginGoogle":
-            loginGoogle()
-            //window.location.hash="#/createCount"
-              break;
-           case "loginButton":{
-
-           
-            LoginWithEmailAndPassword();
-            break;
-           }
-            case "userRegister":{ 
-               window.location.hash="#/register"
-               router("#/register")
-            break;
-            }
-            case "entrar":{ 
-                window.location.hash="#/register"
-               router("#/register")
-               break;
-            }
-           default:
-              
-        }
-     }
- })
- return view;
-} 
-
-
-export default loginComponent;
+}

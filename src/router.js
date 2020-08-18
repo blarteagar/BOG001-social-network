@@ -1,35 +1,38 @@
 import {registerView} from "./register/register.js";
-import login from "./login/login.js";
+import {loginComponent} from "./login/login.js";
 import wall from './wall/wall.js';
 
-
 export const router = async (route) => {
-    
+    let view;
     const content = document.getElementById("root");
-    
     switch (route) {
-        case "#/register": {
+        case "#/register":
             window.location.hash="#/register";
-            content.innerHTML= await registerView.render();
+            view = await registerView.render();
+            content.innerHTML= view;
             registerView.afterRender();
             break;
-        } 
-        case "#/login":{
-            window.location.hash="#/login";
-            content.innerHTML =  login();
+        
+        case "#/login":
+            //window.location.hash="#/login";
+            view =  await loginComponent.render();
+            content.innerHTML =  view;
+            loginComponent.afterRender();
             break;
-        }
-        case "#/wall": {
-            //window.location.hash = "#/wall";
-            //content.innerHTML = wallView.render();
-            //await wallView.afterRenderWall();
-            console.log("WALL");
+        
+        case "#/wall":
+            console.log(wall);
+            console.log(typeof(wall));
+            window.location.hash = "#/wall"
+            content.appendChild(wall());
             break;
-        }
         default:
-            content.innerHTML =  login();
+            view = await loginComponent.render();
+            content.innerHTML =  view;
+            loginComponent.afterRender();
             break;
     }
+     history.pushState({view}, "", route);
 }
     
 router(window.location.hash);

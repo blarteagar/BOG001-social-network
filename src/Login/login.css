@@ -3,35 +3,55 @@
 
 
 * {
-    box-sizing:border-box;
-    margin: 0;
-    padding: 0;
+  margin:0px;
+  padding: 0px;
+  box-sizing: border-box;
+    
 }
 
 body {
+    text-align: center;
     height: 100%;
     width: 100%;
     background-color: #3A2C65;
 }
 
 .box-login{
+    z-index: 1;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(20, 5%);
+    grid-template-columns: repeat(10, 10%);
+    grid-gap: 0px;
+    background-color: #3A2C65;
+}   
+     
+
+.TechMeLogin{
+    
+    grid-column-start: 3;
+    grid-column-end: 9;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    margin: auto;
+}
+
+.WelcomeLogin{
+    grid-column-start: 2;
+    grid-column-end: 10;
+    grid-row-start: 4;
+    grid-row-end: 7;
+    margin: auto;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.tech {
-    font-family: 'Chakra Petch', sans-serif;
-    color: #F515E0;
-    font-size: 8vh;
-}
-
-.me {
-    font-family: 'Cabin Sketch', cursive;
-    color: #CBEF43;
-    font-size: 8vh;
-
+    color: #50C5B7;
+    font-family: 'Catamaran', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 23px;
+    
 
 }
 
@@ -44,79 +64,353 @@ body {
 
 }
 
-/*
-form {
-    display: flex;
-    flex-direction: column;
-    /*justify-content: space-between;
-    width: 80%;
-    border: 1px solid white;
-    height: fit-content;
-    border-radius: 3px;
-    margin: 5vw auto;
-    padding: 0 2px;
-    justify-content: center;
+
+.techLogin {
+    font-family: 'Chakra Petch', sans-serif;
+    color: #F515E0;
+    font-size: 7vh;
 }
 
-input {
+.MeLogin {
+    font-family: 'Cabin Sketch';
+    color: #CBEF43;
+    font-size: 7vh;
+    font-style: normal;
+    font-weight: normal;
+
+
+}
+.box-form{
+    display: grid;
+    grid-template-columns: repeat(10, 10%);
+    grid-template-rows: repeat(10, 15%);
+}
+
+form{
+    grid-column-start: 2;
+    grid-column-end: 10;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    width: 100%;
+    height: 100%;
     
-    height: 5vh;
+}
+ 
+
+
+.FormLogin{
+    z-index: 2;
+    grid-column-start: 2;
+    grid-column-end:10;
+    grid-row-start: 8;
+    grid-row-end: 15;
+    flex-direction: column;
+    border: 1px solid white;
+    border-radius: 3px;
+    padding: 2%;   
+    justify-content: flex-start;
+    background-color: #3A2C65;
+    margin-top: 10px;
+}
+
+ 
+ 
+.InputLogin{
+    
+    
+    width: -webkit-fill-available;
+    height:  -webkit-fill-available;
+    margin-top: auto;
+    margin-bottom: 8%;
     font-family: 'Catamaran', sans-serif;
     font-size: medium;
     color: white;
     background-color: #3A2C65;
     border: 1px solid white;
     border-radius: 3px;
-    margin: 10px 10px;
-}
-
-
-button {
-    position: relative;
-    width: 80%;
-    height: 5vh;
-    font-family: 'Chakra Petch', sans-serif;
-    font-size: medium;
-    font-weight: bold;
-    background-color: #A43A9A;
-    border: 1px solid #C4C4C4;
-    border-radius: 3px;
-    color: #C4C4C4;
-
-    
+    padding: 4.5px;
     
 }
-*/
-.btn1{
+
+
+ .google{
+
+    grid-column-start: 2;
+    grid-column-end: 10;
+    grid-row-start: 7;
+    grid-row-end: 7;
+    margin: auto;
+    display: flex;
+
+ }
+
+ 
+ .btn1{
   
-   align-self: center;
-   color: #D6D3D3;
-   font-family: 'Chakra Petch', sans-serif;
-   border: 0px;
-   text-decoration: underline;
-   margin: auto;
+  grid-column-start: 4;
+  grid-column-end: 9;
+  grid-row-start: 7;
+  grid-row-end: 7;
+  color: #D6D3D3;
+  font-family: 'Chakra Petch', sans-serif;
+  border: 0px;
+  text-decoration: underline;
+  margin: auto;
    
 
 }
 
 .icono{
-
+    
+    display: inline-block;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 7;
+    grid-row-end: 7;
     margin: auto;
-    height: 40px;
-    width: 40px;
-    justify-content: space-around;
+    height: 35px;
+    width: 35px;
+     
     
 }
 
-.btn2{
+ .actionsLogin{
+
+    margin-top: 4vh;
+     /* flex-direction: column;
+     grid-row-start: 7;
+    grid-column-start: 2;
+    grid-column-end: 9;
+    grid-template-columns: repeat(10, 10%);
+    grid-template-rows: repeat(3,10%);
+    grid-gap: 10%; */
+}
+
+    /* grid-template-columns: repeat(2, 33%);
+    grid-gap: 33%;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center; */
+     
+     
     
-    align-self: center;
+
+
+.loginButton {
+    width: 26vw;
+    height: auto;
+    font-family: 'Catamaran', sans-serif;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #A43A9A;
+    border: 1px solid #C4C4C4;
+    border-radius: 3px;
+    color: #C4C4C4;
+    margin-left: 5%;
+     
+}
+
+.btn2{
+    grid-column-start: 1;
+    width: 47%;
+    height: 5vh;
     font-family: 'Chakra Petch', sans-serif;
+    font-size: 14px;
     color: #CBEF43;
     border: 0px;
     text-decoration: underline;
     margin: auto;
+    margin-bottom: 5px;
 }
 
+.Img{
+    z-index: 0;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    height: 100%;
+    grid-column-start: 1;
+    grid-column-end: 11;
+    grid-row-start: 14;
+    grid-row-end: 21;
  
+}
+ 
+ 
+
+
+/* 
+@media (min-width: 740px) and (max-width: 2560px) {
+ 
+    .actionsLogin{
+        flex-direction: row;
+        margin-top: 8%;
+    }
     
+    form{
+        margin-top: 30px;
+    }
+    .box-login{
+        z-index: 1;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 20fr, 10fr;
+        grid-template-rows: repeat(10, 10%);
+        grid-gap: 0px;
+        background-color: #3A2C65;
+    }   
+    
+
+    .TechMeLogin{
+    
+        grid-column-start: 7;
+        grid-column-end: 10;
+        grid-row-start: 1;
+        grid-row-end: 3 ;
+        margin-bottom: 0px;
+    }
+
+    .tech {
+        font-family: 'Chakra Petch', sans-serif;
+        color: #F515E0;
+        font-size: 20px;
+    }
+    
+    .me {
+        font-family: 'Cabin Sketch', cursive;
+        color: #CBEF43;
+        font-size: 20px;
+    }
+
+    .WelcomeLogin{
+        grid-column-start: 6;
+        grid-column-end: 12;
+        grid-row-start: 3;
+        grid-row-end: 3;
+        margin: auto;
+        text-align: center;
+        color: #50C5B7;
+        font-family: 'Catamaran', sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 23px;
+        
+    
+    }
+
+    .FormLogin{
+        z-index: 2;
+       grid-column-start: 5;
+       grid-column-end:11;
+       grid-row-start: 5;
+       grid-row-end: 9;
+       display: flex;
+       flex-direction: column;
+       border: 1px solid white;
+       border-radius: 3px;
+       padding: 2%;   
+       justify-content: flex-start;
+       background-color: #3A2C65;
+       margin-top: 10px;
+       margin-left: 8%;
+       margin-right: 6%;
+   }
+       
+          
+   .InputLogin{
+    width: 89%;
+    margin-top: 14px;
+    margin-bottom: 2%;
+    height: auto;
+    font-family:Verdana,sans-serif;
+    color: white;
+    background-color: #3A2C65;
+    border: 1px solid white;
+    border-radius: 3px;
+    height: 42%;
+    font-size:16px; 
+}
+
+.loginButton {
+    
+    
+    height: 5vh;
+    font-family: 'Catamaran', sans-serif;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #A43A9A;
+    border: 1px solid #C4C4C4;
+    border-radius: 3px;
+    color: #C4C4C4;
+    width: 41%;
+    margin-top: 20px;
+    margin-left: 99px;
+}
+   
+.btn1{
+  
+    grid-column-start: 8;
+    grid-column-end: 10;
+    grid-row-start: 4;
+    grid-row-end: 4;
+    color: #D6D3D3;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 20px;
+    border: 0px;
+    text-decoration: underline;
+    margin: auto;
+     
+  
+  }
+  
+  .icono{
+      
+      display: inline-block;
+      grid-column-start: 7;
+      grid-column-end: 7;
+      grid-row-start: 4;
+      grid-row-end: 4;
+      margin: auto;
+      height: 45px;
+      width: 45px;
+       
+      
+  }
+  
+  .btn2{
+      
+      font-size: 20px;
+      font-family: 'Chakra Petch', sans-serif;
+      color: #CBEF43;
+      border: 0px;
+      text-decoration: underline;
+      margin: auto;
+  }
+  
+  .Img{
+      z-index: 0;
+      display: flex;
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      right: 0px;
+      width: 100%;
+      height: 100%;
+      grid-column-start: 1;
+      grid-column-end: 6;
+      grid-row-start: 1;
+      grid-row-end: 20;
+   
+  }
+   
+
+
+    
+} */
