@@ -20,9 +20,10 @@ export const router = async (route) => {
             break;
         }
         case "#/wall": {
-            window.location.hash = "#/wall";
-            content.innerHTML = wallView.render();
-            await wallView.afterRenderWall();
+            //window.location.hash = "#/wall";
+            //content.innerHTML = wallView.render();
+            //await wallView.afterRenderWall();
+            console.log("WALL");
             break;
         }
         default:
