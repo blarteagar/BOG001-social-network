@@ -11,8 +11,9 @@ export const LoginWithEmailAndPassword = async () => {
  }
 
  export const RedirectToRegister = () => {
-   window.location.hash = "#/register"
-   router("#/register")
+   window.location.hash = "#/register";
+   router("#/register");
+
  }
 
 export const loginComponent = {
@@ -40,20 +41,16 @@ export const loginComponent = {
       </div> 
       </div>
       <img class="Img"  src="img/people.jpg "  alt="people">
-      
-      
-      
       </div> 
-
-      `  
+        `  
       return view;
    },
    afterRender: () => {
       let loginGoogleItem = document.getElementById("loginGoogleid");
       loginGoogleItem.addEventListener('click',loginGoogle);
-      let loginEmail = document.getElementById("loginButton")
-      loginEmail.addEventListener('click',LoginWithEmailAndPassword)
-      let userRegister = document.getElementById("userRegister")
-      userRegister.addEventListener('click',RedirectToRegister)
+      let loginEmail = document.getElementById("loginButton");
+      loginEmail.addEventListener('click',LoginWithEmailAndPassword);
+      let userRegister = document.getElementById("userRegister");
+      userRegister.addEventListener('click',RedirectToRegister);
    }
 }

@@ -33,8 +33,7 @@ export const router = async (route) => {
     
 router(window.location.hash);
 
-// let btnWall = document.getElementById("btnWall");
-// btnWall.addEventListener("click", () => { router("#/wall") });
+ 
 
 
 

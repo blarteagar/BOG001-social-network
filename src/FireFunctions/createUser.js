@@ -20,7 +20,7 @@ export const createUser = async (email, password) => {
        message = "introduce un correo válido";
              
      } else if (errorCode=="auth/email-already-in-use"){
-       title = "Errorr";
+       title = "Error";
        message = "Este correo ya está registrado"
          
      } else{
