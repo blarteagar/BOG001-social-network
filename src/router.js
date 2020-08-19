@@ -20,14 +20,18 @@ export const router = async (route) => {
             break;
         }
         case "#/wall": {
-            console.log(wall);
-            console.log(typeof(wall));
             window.location.hash = "#/wall"
             return content.appendChild(wall());
-            break
+            
+        }
+        case "": {            
+            window.location.hash="#/login";
+            content.innerHTML =  login();
+            break;
+            
         }
         default:
-            content.innerHTML =  login();
+            content.innerHTML =  "404: Ruta no encontrada";
             break;
     }
 }
