@@ -1,7 +1,7 @@
 export const createUser = async (email, password) => {
   try {
     await firebase.auth().createUserWithEmailAndPassword(email, password);  
-    await user.sendEmailVerification()
+    await  firebase.auth().currentUser.sendEmailVerificationuser()
      
     return {title:"Confirma", message:"Hemos enviado un correo de verificación, por favor valida tu cuenta para continuar"};
   } catch (error) {
