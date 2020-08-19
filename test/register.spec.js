@@ -1,6 +1,5 @@
-import mockFirebase from "../src/FireFunctions/_mocks_/createUser";
+import mockFirebase from "../src/_mocks_/createUser"
 global.firebase = mockFirebase();
-
 
 import { createUser } from "../src/FireFunctions/createUser";
 
