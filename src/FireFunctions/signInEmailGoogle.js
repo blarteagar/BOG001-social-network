@@ -1,8 +1,7 @@
 export const loginWithEmail = async (email, password) => {
   try {
     await firebase.auth().signInWithEmailAndPassword(email, password);
-    return "bienvenido"
-    // {title: "Bienvenido", message:"Ingresaste con correo eletronico"};
+    return   {title: "Bienvenido", message:"Ingresaste con correo eletronico"};
   } catch (error) {
     // Handle Errors here.
     var errorCode = error.code;
@@ -20,7 +19,7 @@ export const loginWithEmail = async (email, password) => {
 
     } else if (errorCode == "auth/user-not-found") {
       title = "Error";
-      message = "Correo eletronico no existe";
+      message = "Correo eletronico no registrado.";
     }
     return {title, message}
   }
