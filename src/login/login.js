@@ -1,4 +1,4 @@
-import { wacher } from "../FireFunctions/signOut.js";
+import { watcher } from "../FireFunctions/signOut.js";
 import { loginGoogle, loginWithEmail } from "../FireFunctions/signInEmailGoogle.js";
 import { router } from "../router.js";
 import { loadModal, closeModal } from "../component/modal.js";
@@ -52,7 +52,7 @@ export const loginComponent = {
       let loginEmail = document.getElementById("loginButton");
       loginEmail.addEventListener('click', () => {
          LoginWithEmailAndPassword();
-         wacher();
+         watcher ();
          router("#/wall");
        });
       let userRegister = document.getElementById("userRegister");
