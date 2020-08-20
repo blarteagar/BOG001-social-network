@@ -4,7 +4,7 @@
   
     display: none; 
     position: fixed; 
-    z-index: 3;
+    z-index: 5;
     left: 0;
     top: 0;
     width: 100%; 
@@ -15,7 +15,7 @@
   
     .modal-content {
       margin: auto;
-      width: 87;
+      width: 87%;
       height: 22%;
       color: #D6D3D3;
       text-align: center;
@@ -56,8 +56,7 @@
     font-family: 'Chakra Petch', sans-serif;
     font-size: 20px;
     margin: auto;
-    text-align: center;
-    align-items: center;
+    padding-left: 12%;
   }
   
   .modal-body, #contentElement {
@@ -67,7 +66,7 @@
   }
   
   
-  #contentElement div{
+  #contentElement section{
     display: grid;
     grid-template-rows: 2fr;
     text-align: center;
@@ -75,7 +74,7 @@
     
   }
   
-   p{
+   h3{
     font-family: 'Chakra Petch', sans-serif;
     font-size: 18px;
     margin-top: 5%;
@@ -91,7 +90,7 @@
     .modal {
       display: none; 
       position: fixed; 
-      z-index: 3;
+      z-index: 5;
       left: 0;
       top: 0;
       width: 100%; 
@@ -104,15 +103,17 @@
     .modal-content {
       margin: auto;
       width: 70%;
-      height: 35%s;
-      color: #D6D3D3;
+      height: 25%;
       text-align: center;
+      color: #D6D3D3;
       background-color: #3A2C65;
       border: 0.1vw solid #C4C4C4;
       border-width: 2px 2px;
       border-radius: 5px;
       box-shadow:  0 4px 8px 0    rgba(241, 228, 238, 0.3),0 6px 20px 0   rgba(241, 228, 238, 0.3);
     }
+    
+    
     .close {
       color: #D6D3D3;
       font-size: 3.2vw;
@@ -128,8 +129,8 @@
     .modal-header h2{
       font-family: 'Chakra Petch', sans-serif;
       font-size: 3.0vw;
-      margin: auto;
-       
+      padding-left: 14%;
+      
     }
 
     .modal-header {
@@ -143,11 +144,16 @@
       border-radius: 4px;
       width: 100%;
       height: 30%; 
-      text-align: center;
-      align-items: center;
+       
     }
      
-   
+    #contentElement section{
+      display: grid;
+      grid-template-rows: 2fr;
+      text-align: center;
+      align-items: center;
+      
+    }
    .modal-body {
       display: grid;
       padding: 10px;
@@ -156,10 +162,10 @@
       grid-template-rows: 3fr;
       margin: auto;
     }
-    p{
+    h3{
       font-family: 'Chakra Petch', sans-serif;
       font-size: 2.7vw;
-      margin-top: 10px;
+      margin-top: 20px;
       
     }
     

@@ -8,6 +8,7 @@ export const userRegister = async () => {
   let userPassword = document.getElementById("passRegister").value;
   let statusRegister = await createUser(userEmail, userPassword);
   loadModal(statusRegister.title, statusRegister.message);
+  
 }
 
 export const registerView = { 

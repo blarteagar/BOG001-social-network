@@ -18,9 +18,9 @@ export const windowModal = {
      <span id="closeButton" class="close">&times;</span>
     </header>
     <article id="bodyModal" class="modal-body"> 
-     <div id="contentElement">
-        <p id="messageModal"></p>
-     </div>       
+     <section id="contentElement">
+        <h3 class="messageModal" id="messageModal"></h3>
+     </section>      
   </article>
     </div>
      `
