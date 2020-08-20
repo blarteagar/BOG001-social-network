@@ -8,7 +8,8 @@ export const signOutUser = async () => {
     });
 }
 
-firebase.auth().onAuthStateChanged(function (user) {
+ export const wacher = () => {
+     firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
         console.log(user);
         // User is signed in.
@@ -29,3 +30,5 @@ firebase.auth().onAuthStateChanged(function (user) {
     
     }
 })
+
+ }

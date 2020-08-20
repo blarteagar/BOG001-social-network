@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap');
 
 .modal {
+  
     display: none; 
     position: fixed; 
-    z-index: 5;
+    z-index: 3;
     left: 0;
     top: 0;
     width: 100%; 
@@ -89,7 +90,7 @@
     .modal {
       display: none; 
       position: fixed; 
-      z-index: 5;
+      z-index: 3;
       left: 0;
       top: 0;
       width: 100%; 

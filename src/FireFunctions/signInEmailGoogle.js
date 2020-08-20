@@ -19,7 +19,7 @@ export const loginWithEmail = async (email, password) => {
 
     } else if (errorCode == "auth/user-not-found") {
       title = "Error";
-      message = "Correo eletronico no existe";
+      message = "Correo eletronico no registrado.";
     }
     return {title, message}
   }
