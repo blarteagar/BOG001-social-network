@@ -20,6 +20,7 @@ export const loginComponent = {
    render: async () => {
       const view = `
       <div class='box-login'>
+      
        <div class="TechMeLogin"> <h1 class="techLogin"> | Tech<span class="MeLogin">Me</span> </h1> </div>
       <div class="WelcomeLogin"> <h2 class="greenTex">¡Únete a Nuestra Red Social de Developers!</h2></div>
        <div class="google">
@@ -41,7 +42,8 @@ export const loginComponent = {
       </div> 
       </div>
       <img class="Img"  src="img/people.jpg "  alt="people">
-      </div> 
+      </div>
+      
         `  
       return view;
    },
