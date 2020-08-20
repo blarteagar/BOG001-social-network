@@ -14,6 +14,11 @@ export const LoginWithEmailAndPassword = async () => {
    window.location.hash = "#/register";
    router("#/register");
 
+// // export const RedirectToWall = () =>{
+// //    window.location.hash = "#/wall";
+// //    router("#/wall"); 
+// }
+
  }
 
 export const loginComponent = {
