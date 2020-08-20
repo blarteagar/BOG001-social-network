@@ -1,6 +1,6 @@
 import {registerView} from "./register/register.js";
 import {loginComponent} from "./login/login.js";
-import wall from './wall/wall.js';
+import wallView from "./wall/wall.js";
 
 export const router = async (route) => {
     
@@ -19,11 +19,12 @@ export const router = async (route) => {
             break;
         
         case "#/wall":
-            console.log(wall);
-            console.log(typeof(wall));
-            window.location.hash = "#/wall"
-            content.appendChild(wall());
+            window.location.hash = "#/wall";
+            let view = await wallView.render();
+            content.innerHTML = view;
+            wallView.afterRender();
             break;
+
         default:
             content.innerHTML = await loginComponent.render();
             loginComponent.afterRender();
