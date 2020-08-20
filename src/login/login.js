@@ -1,4 +1,3 @@
-import { watcher } from "../FireFunctions/signOut.js";
 import { loginGoogle, loginWithEmail } from "../FireFunctions/signInEmailGoogle.js";
 import { router } from "../router.js";
 import { loadModal, closeModal } from "../component/modal.js";
@@ -53,12 +52,7 @@ export const loginComponent = {
       let loginGoogleItem = document.getElementById("loginGoogleid");
       loginGoogleItem.addEventListener('click',loginGoogle);
       let loginEmail = document.getElementById("loginButton");
-      loginEmail.addEventListener('click', () => {
-         LoginWithEmailAndPassword(); 
-         watcher(); 
-         console.log("usuario logueado correctamente"); 
-         router("#/wall")
-      });
+      loginEmail.addEventListener('click',LoginWithEmailAndPassword);
       let userRegister = document.getElementById("userRegister");
       userRegister.addEventListener('click',RedirectToRegister);
    }
