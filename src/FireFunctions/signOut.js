@@ -8,7 +8,8 @@ export const signOutUser = async () => {
     });
 }
 
-firebase.auth().onAuthStateChanged(function (user) {
+export const watcher = () => {
+        firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
         console.log(user);
         // User is signed in.
@@ -19,7 +20,7 @@ firebase.auth().onAuthStateChanged(function (user) {
         var isAnonymous = user.isAnonymous;
         var uid = user.uid;
         var providerData = user.providerData;
-        
+    
 
     } else {
 
@@ -29,3 +30,4 @@ firebase.auth().onAuthStateChanged(function (user) {
     
     }
 })
+}

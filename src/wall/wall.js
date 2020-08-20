@@ -1,9 +1,14 @@
+import { signOutUser } from "../FireFunctions/signOut.js"
+import { router } from "../router.js";
+
 const wallView = {
 
   render: async () => {
     let content = document.getElementById("root");
     content.innerHTML = "";
-    const view = `<div class="grid">
+    const view = `
+    
+    <div class="grid">
     <div class="logoWall">
     <h1 class="techWall"> |Tech<span class="meWall">Me</span></h1></div>
     </div>
@@ -30,7 +35,9 @@ const wallView = {
     <p>Made with love by Laboratorians</p>
     <p>(c) Blanca Arteaga - Caro Suarez - Daniela Ramírez 2020</p>
     </div>    
-    </div>`;
+    </div>
+
+    `
 
     return view;
   },
@@ -48,7 +55,9 @@ const wallView = {
     
     let btnOutWall = document.getElementById("btnOutWall");
     btnOutWall.addEventListener("click", () => {
-    console.log("nos vamos :-(")
+    signOutUser();
+    router("#/login");
+    console.log("nos vamos :-(");
 });
     let btnShareWall = document.getElementById("btnShareWall");
     btnShareWall.addEventListener("click", () => {
