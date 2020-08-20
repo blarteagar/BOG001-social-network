@@ -16,17 +16,17 @@ describe("testing de la función createUser de firebase", () => {
 
     test("No acepta correo inválido", async () => {
         const data = await createUser("caro", "123456789");
-        expect(data).toBe("auth/invalid-email");
+        expect(data).toBe("Introduce un correo válido");
     }),
 
     test("La contraseña debe tener mínimo 6 caracteres", async () => {
         const data = await createUser("carosuarez90@gmail.com", "12345");
-        expect(data).toBe("auth/weak-password");
+        expect(data).toBe("La contraseña debe tener mínimo 6 caracteres");
     }),
 
     test("El mismo correo no se puede registrar más de una vez", async () => {
         const data = await createUser("blanquita@gmail.com", "32458712");
-        expect(data).toBe("auth/email-already-in-use");
+        expect(data).toBe("Este correo ya está registrado");
     })
 });
 

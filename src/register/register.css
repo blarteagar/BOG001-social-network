@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@100&display=swap');
 
 
 
@@ -197,7 +197,7 @@ html, #root, body, .box-register {
         grid-column-end: 20;
         grid-row-start: 5;
         grid-row-end: 7;
-        font-size: 20px;
+        font-size: 5px;
         padding: 0;
         margin: 0;
         
