@@ -1,0 +1,163 @@
+templateCSS
+<div class="box-wall">
+        
+        <div class="logoWall"><h1 class="techWall"> |Tech<span class="meWall">Me</span></h1></div>
+
+          <div class="navWall">
+            <span <a href="#/wall">muro<a></span>
+            <span <a href="#/news">noticias<a></span>
+            <span <a href="#/Logout">salir<a></span>
+          </div>
+
+        <div class="textWall">
+          <p class="theWall">Aquí podrás compartir tu idea, apoyar otros proyectos, dar like y compartir tus conocimientos</p>
+        </div>
+
+        <div class="shareIdea">
+          <p class="shareText">Comparte tu idea:</p>
+        <input class = "writePost" type = textarea maxlength = 120>
+        <button id="btnShare">enviar</button>
+        </div>
+            
+        <div class="postWall">
+        <p class="postText">Esta es uno de tus publicaciones</p>
+        <button id="btnEdit">editar</button>
+        <button id="btnErase">borrar</button>
+        </div>
+                      
+       </div>
+
+
+       CSS So Far...
+
+
+       
+* {
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, #root, body, .box-wall {
+    width: 100%;
+    height: 100%;
+    background-color: #3A2C65;
+}
+
+.box-wall{
+width: 100%;
+height: 100%;
+display: grid;
+grid-template-columns: repeat(10, 10%);
+grid-template-rows: repeat(20, 5%);
+grid-gap: 0px;
+background-color: #3A2C65;
+}
+
+.logoWall {
+    display: block;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    margin: auto;    
+    font-style: normal;
+    font-weight: normal;
+    text-align: center;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.logoWall .techWall {
+    font-family: 'Chakra Petch', sans-serif;
+    color: #F515E0;
+    font-size: 9vh;
+}
+
+.logoWall .meWall {
+    font-family: 'Cabin Sketch';
+    color: #CBEF43;
+    font-size: 9vh;
+}
+
+.navWall {
+    grid-column-start: 5;
+    grid-column-end: 10;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    margin: 1%;
+    padding: 1%;
+    text-align: center;
+    font-family: Catamaran;
+    color: #CBEF43;
+    font-style: normal;
+    /*font-weight: bold;*/
+    font-size: 2hv;
+}
+
+.navWall span{
+    padding: 1%;
+}
+
+.textWall {
+    display: block;
+    grid-row-start: 3;
+    grid-row-end: 5;
+    grid-column-start: 2;
+    grid-column-end: 9;
+}
+
+.textWall .theWall{
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 10;
+    font-family: Catamaran;
+    margin: auto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2vh;
+    margin: auto;
+    text-align: center;
+    color: #50C5B7;
+}
+
+.shareIdea{
+    grid-column-start: 1;
+    grid-column-end: 10;
+    grid-row-start: 5;
+    grid-row-end: 11;
+}
+
+.shareText{
+    grid-column-start: 1;
+    grid-column-end: 10;
+    grid-row-start: 5;
+    grid-row-end: 7;
+    font-family: Catamaran;
+    font-size: 4vh;
+}
+
+
+.writePost{
+    grid-row-start: 8;
+    grid-row-end: 9;
+    grid-column-start: 3;
+    grid-column-end: 7;
+    background-color: beige;
+    color: #3A2C65;
+    font-family: Catamaran;
+    font-size: 4vh;
+    border-width: 0vh;
+}
+
+.postWall{
+    grid-column-start: 1;
+    grid-column-end: 10;
+    grid-row-start: 10;
+    grid-row-end: 11;
+    margin: auto;
+    font-family: 'Times New Roman', Times, serif;
+    background-color:gray;
+    color: blue;
+}
