@@ -47,7 +47,5 @@ export const createUser = async (email, password) => {
   }
 
 
-  console.log(message)
-  
   
 };

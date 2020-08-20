@@ -1,7 +1,6 @@
 import {createUser} from "/FireFunctions/createUser.js";
 import { loadModal, closeModal } from "../component/modal.js";
-import {signOutUser} from "/FireFunctions/signOut.js";
-import {router} from "../router.js";
+
 
 export const userRegister = async () => {
   let userEmail = document.getElementById("emailRegister").value;
