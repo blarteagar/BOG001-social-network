@@ -1,9 +1,89 @@
-#mainWall{
-display: grid;
-grid-template-columns: repeat(10, 10%);
-grid-template-rows: repeat(20, 5%);
-text-align:center;
-font-family: Catamaran;
-background-color:gray;
-color:wheat;
+*{
+    height: 100%;
+    width: 100%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: [x0] 1fr [x1] 1fr [x2] 1fr [x3] 1fr [x4] 1fr [x5] 1fr [x6] 1fr [x7] 1fr [x8] 1fr  [x9] 1fr  [x10];
+    grid-template-rows:  [y0] 1fr  [y1] 1fr  [y2] 1fr  [y3] 1fr  [y4] 1fr  [y5] 1fr  [y6] 1fr  [y7] 1fr  [y8] 1fr  [y9] 1fr  [y10] 1fr  [y11] 1fr  [y12] 1fr  [y13] 1fr  [y14] 1fr  [y15] 1fr  [y16] 1fr  [y17] 1fr  [y18] 1fr  [y19] 1fr  [y20] 1fr  [y21];
+    grid-gap: 0 0;
+    background-color: #3A2C65;
+    justify-items: center;
+    align-items: center;
+}
+
+.logoWall {
+    grid-row: y0 / y3;
+    grid-column: x0 / x6;
+}
+
+.techWall {
+    font-family: 'Chakra Petch', sans-serif;
+    color: #F515E0;
+    font-size: 5vh;
+}
+
+.meWall {
+    font-family: 'Cabin Sketch';
+    color: #CBEF43;
+    font-size: 5vh;
+}
+
+.navWall {
+    grid-row: y0 / y3;
+    grid-column: x6 / x11;
+}
+
+.itemWall{
+    padding: 1%;
+}
+
+.navButtonWall{
+    border: none;
+    font-family: Catamaran;
+    font-size: 2vh;
+    background-color: #3A2C65;
+    color: #CBEF43;
+}
+
+.hereWall {
+    grid-row: y3 / y5;
+    grid-column: x0 / x11;
+    font-family: Catamaran;
+    font-size: 2vh;
+    color: #CBEF43;
+}
+
+.ideaWall {
+    grid-row: y5 / y8;
+    grid-column: x1 / x11;
+    background-color: CCCCCC;
+    font-family: Catamaran;
+    font-size: 2vh;
+    color: #CBEF43;
+}
+
+.shareWall {
+    grid-row: y9 / y18;
+    grid-column: x0 / x11;
+    font-family: Catamaran;
+    font-size: 2vh;
+    color: #CBEF43;
+    background-color: #3A2C65;;
+}
+
+.shareText {
+    font-family: Catamaran;
+    font-size: 2vh;
+    color: #CBEF43;
+}
+
+
+.footWall {
+    grid-row: y18 / y21;
+    grid-column: x0 / x11;
+    font-family: Catamaran;
+    font-size: 2vh;
+    color: #CBEF43;
 }
