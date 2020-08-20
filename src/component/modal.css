@@ -3,7 +3,7 @@
 .modal {
     display: none; 
     position: fixed; 
-    z-index: 3;
+    z-index: 5;
     left: 0;
     top: 0;
     width: 100%; 
@@ -55,8 +55,7 @@
     font-family: 'Chakra Petch', sans-serif;
     font-size: 20px;
     margin: auto;
-    text-align: center;
-    align-items: center;
+    padding-left: 12%;
   }
   
   .modal-body, #contentElement {
@@ -90,7 +89,7 @@
     .modal {
       display: none; 
       position: fixed; 
-      z-index: 3;
+      z-index: 5;
       left: 0;
       top: 0;
       width: 100%; 
@@ -129,6 +128,7 @@
     .modal-header h2{
       font-family: 'Chakra Petch', sans-serif;
       font-size: 3.0vw;
+      padding-left: 14%;
       
     }
 
