@@ -244,14 +244,14 @@ form {
     font-style: normal;
     font-weight: bold;
     line-height: 23px;
-    font-size: 16px;
+     
   }
 
   .greenTex {
     font-family: "Catamaran", sans-serif;
     font-weight: bold;
     color: #50c5b7;
-    font-size: 2.2vw;
+    font-size: 2.0vw;
     margin: 0 5vw;
     line-height: 1.1;
   }
@@ -275,7 +275,7 @@ form {
     border: 0px;
     text-decoration: underline;
     margin: auto;
-    font-size: 2.2vw;
+    font-size: 2.0vw;
   }
 
   .icono {
@@ -306,7 +306,7 @@ form {
 
   .FormLogin {
       z-index: 2;
-    grid-column-start: 10;
+    grid-column-start: 9;
     grid-column-end: 20;
     grid-row-start: 8;
     grid-row-end: 18;
@@ -342,7 +342,7 @@ form {
     height: auto;
     font-family: "Catamaran", sans-serif;
     text-align: center;
-    font-size: 2.1vw;
+    font-size: 1.7vw;
     font-weight: bold;
     background-color: #a43a9a;
     border: 0.1vw solid #c4c4c4;
@@ -356,7 +356,7 @@ form {
     width: 20vh;
     height: 5vh;
     font-family: "Chakra Petch", sans-serif;
-    font-size: 2.1vw;
+    font-size: 1.9vw;
     color: #cbef43;
     border: 0px;
     text-decoration: underline;
