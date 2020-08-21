@@ -200,7 +200,8 @@ form {
 
   .Img {
      
-    position: absolute;
+    object-fit: cover;
+    object-position: 45% -1px;
     grid-column-start: 1;
     grid-column-end: 10;
     grid-row-start: 1;
@@ -299,7 +300,7 @@ form {
     grid-column-start: 9;
     grid-column-end: 20;
     grid-row-start: 8;
-    grid-row-end: 18;
+    grid-row-end: 20;
     flex-direction: column;
     border: 1px solid white;
     border-radius: 3px;

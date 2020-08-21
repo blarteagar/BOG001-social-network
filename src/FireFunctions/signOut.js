@@ -8,7 +8,7 @@ export const signOutUser = async () => {
     });
 }
 
-export const watcher = () => {
+export const watcher =  () => {
         firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
         console.log(user);

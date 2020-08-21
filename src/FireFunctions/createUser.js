@@ -13,10 +13,9 @@ export const createUser = async (email, password) => {
     await user.sendEmailVerification(actionCodeSettings);
     console.log(user);
     console.log("Hemos enviado un correo de verificación, por favor valida tu cuenta para continuar.");
-    title="Registro Exitoso";
-    message = "Te hemos enviado un correo, por favor valida tu cuenta";
+     
     //return "Registrado Correctamente"
-
+       return {title: "Registro Exitoso", message:"Te hemos enviado un correo, por favor valida tu cuenta"};
   } catch (error) {
     var errorCode = error.code;
     var errorMessage = error.message;
