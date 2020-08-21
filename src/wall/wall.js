@@ -25,7 +25,7 @@ const wallView = {
     </div>
     <div class="shareWall">
     <p class="shareText">Escribe en este espacio:</p>
-    <input class = "writePost" type = textarea maxlength = 120 placeholder = "Al contrario de la creencia popular, el texto de Lorem Ipsum no">
+    <input id = "postWall" class = "writePost" type = textarea maxlength = 120 placeholder = "Al contrario de la creencia popular, el texto de Lorem Ipsum no">
     <button id="btnShareWall">compartir</button>
     <button id="btnEditWall">editar</button>
     <button id="btnEraseWall">borrar</button>

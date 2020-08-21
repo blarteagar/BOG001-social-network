@@ -17,18 +17,19 @@ html, #root, body, .box-register {
 
 .grid {
     display: grid;
-    grid-template-columns: [x0] 1fr [x1] 1fr [x2] 1fr [x3] 1fr [x4] 1fr [x5] 1fr [x6] 1fr [x7] 1fr [x8] 1fr  [x9] 1fr  [x10];
-    grid-template-rows:  [y0] 1fr  [y1] 1fr  [y2] 1fr  [y3] 1fr  [y4] 1fr  [y5] 1fr  [y6] 1fr  [y7] 1fr  [y8] 1fr  [y9] 1fr  [y10] 1fr  [y11] 1fr  [y12] 1fr  [y13] 1fr  [y14] 1fr  [y15] 1fr  [y16] 1fr  [y17] 1fr  [y18] 1fr  [y19] 1fr  [y20] 1fr  [y21];
-    grid-gap: 0 0;
-    line-height: 10%;
-    background-color: #3A2C65;
-    justify-items: center;
-    align-items: center;
+    grid-template-columns: repeat (10, 10%);
+    grid-template-rows: repeat (20, 5%);
+    grid-gap: 0;
+    line-height: 5%;
+    text-justify:center;
+    text-align: center;
 }
 
 .logoWall {
-    grid-row: y0 / y3;
-    grid-column: x0 / x6;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 6;
 }
 
 .techWall {
@@ -44,8 +45,10 @@ html, #root, body, .box-register {
 }
 
 .navWall {
-    grid-row: y0 / y3;
-    grid-column: x6 / x11;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 6;
+    grid-column-end: 10;
 }
 
 .itemWall{
@@ -61,16 +64,20 @@ html, #root, body, .box-register {
 }
 
 .hereWall {
-    grid-row: y3 / y5;
-    grid-column: x0 / x11;
+    grid-row-start: 3;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 10;
     font-family: Catamaran;
     font-size: 2vh;
     color: #CBEF43;
 }
 
 .ideaWall {
-    grid-row: y5 / y8;
-    grid-column: x0 / x11;
+    grid-row-start: 5;
+    grid-row-end: 7;
+    grid-column-start: 1;
+    grid-column-end: 10;
     background-color: CCCCCC;
     font-family: Catamaran;
     font-size: 2vh;
@@ -78,24 +85,41 @@ html, #root, body, .box-register {
 }
 
 .shareWall {
-    grid-row: y9 / y18;
-    grid-column: x0 / x11;
+    grid-row-start: 8;
+    grid-row-end: 18;
+    grid-column-start: 1;
+    grid-column-end: 10;
     font-family: Catamaran;
     font-size: 2vh;
     color: #CBEF43;
     background-color: #3A2C65;;
 }
 
+
 .shareText {
+    grid-row-start: 10;
+    grid-row-end: 11;
+    grid-column-start: 1;
+    grid-column-end: 7;
+    font-family: Catamaran;
+    font-size: 2vh;
+    color: #CBEF43;
+}
+.writePost {
+    grid-row-start: 12;
+    grid-row-end: 16;
+    grid-column-start: 3;
+    grid-column-end: 7;
     font-family: Catamaran;
     font-size: 2vh;
     color: #CBEF43;
 }
 
-
 .footWall {
-    grid-row: y18 / y21;
-    grid-column: x0 / x11;
+    grid-row-start: 18;
+    grid-row-end: 20;
+    grid-column-start: 2;
+    grid-column-end: 9;
     font-family: Catamaran;
     font-size: 2vh;
     color: #CBEF43;
