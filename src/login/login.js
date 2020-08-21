@@ -1,10 +1,13 @@
 import { watcher } from "../FireFunctions/signOut.js";
-import {loginGoogle, loginWithEmail} from "../FireFunctions/signInEmailGoogle.js";
+import {
+  loginGoogle,
+  loginWithEmail,
+} from "../FireFunctions/signInEmailGoogle.js";
 import { router } from "../router.js";
 import { loadModal, closeModal } from "../component/modal.js";
-import { userRegister } from "../register/register.js";
 
-export const LoginWithEmailAndPassword = async () => {
+export const LoginWithEmailAndPassword = async (event) => {
+  event.preventDefault();
   let loginEmail = document.getElementById("emailLogin").value;
   let loginPass = document.getElementById("passLogin").value;
   let statusLogin = await loginWithEmail(loginEmail, loginPass);
@@ -14,18 +17,21 @@ export const LoginWithEmailAndPassword = async () => {
     await watcher();
     await router("#/wall");
   } else {
-    console.log("error");
+    console.error("error");
   }
 };
 
-// const googleWallLogin = async () => {
-//   let statusGoogle = await loginGoogle();
-//   loadModal(statusGoogle.title, statusGoogle.message);
-//   if (statusGoogle == statusGoogle.status) {
-//     await watcher();
-//     await router("#/wall");
-//   }
-// };
+const googleWallLogin = async (event) => {
+  event.preventDefault();
+  let statusGoogle = await loginGoogle();
+  loadModal(statusGoogle.title, statusGoogle.message);
+  if (statusGoogle.status === true) {
+    await watcher();
+    await router("#/wall");
+  } else {
+    console.error("error");
+  }
+};
 
 export const RedirectToRegister = () => {
   window.location.hash = "#/register";
