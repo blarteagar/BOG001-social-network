@@ -6,8 +6,9 @@ import { loadModal, closeModal } from "../component/modal.js";
 export const LoginWithEmailAndPassword = async () => {
    let loginEmail = document.getElementById("emailLogin").value;
    let loginPass = document.getElementById("passLogin").value;
-   let statusLogin = await loginWithEmail(loginEmail, loginPass);
-   loadModal(statusLogin.title, statusLogin.message);
+   //let statusLogin = await loginWithEmail(loginEmail, loginPass);
+   //loadModal(statusLogin.title, statusLogin.message);
+   loginWithEmail(loginEmail, loginPass).then(console.log("exito")). catch(console.log("error"));
  }
 
  export const RedirectToRegister = () => {
