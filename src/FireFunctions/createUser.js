@@ -16,8 +16,9 @@ export const createUser = async (email, password) => {
     message = "Te hemos enviado un correo, por favor valida tu cuenta";
     
     return {title, message};
+     
     //return "Registrado Correctamente"
-
+    
   } catch (error) {
     var errorCode = error.code;
     var errorMessage = error.message;
