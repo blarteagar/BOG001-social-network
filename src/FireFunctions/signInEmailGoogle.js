@@ -1,7 +1,10 @@
+import { createUser } from "../FireFunctions/createUser.js"
+
+
 export const loginWithEmail = async (email, password) => {
   try {
     await firebase.auth().signInWithEmailAndPassword(email, password);
-    return   {title: "Bienvenido", message:"Ingresaste con correo eletronico"};
+    return { title: "Bienvenido", message: "Ingresaste con correo eletronico" };
   } catch (error) {
     // Handle Errors here.
     var errorCode = error.code;
@@ -16,27 +19,32 @@ export const loginWithEmail = async (email, password) => {
     } else if (errorCode == "auth/wrong-password") {
       title = "Error";
       message = "Contraseña incorrecta";
-
     } else if (errorCode == "auth/user-not-found") {
       title = "Error";
       message = "Correo eletronico no registrado.";
     }
-    return {title, message}
+    return { title, message };
   }
-}
+};
+var GoogleWall = {
+  url: "http://localhost:5000/#/wall",
+};
 
 export const loginGoogle = async () => {
+  debugger
   try {
     if (firebase.auth().currentUser == null) {
       var provider = new firebase.auth.GoogleAuthProvider();
-      provider.addScope('https://www.googleapis.com/auth/userinfo.email');
-      await firebase.auth().signInWithPopup(provider)
+       provider.addScope("https://www.googleapis.com/auth/userinfo.email");
+      await firebase.auth().signInWithPopup(provider);
       //This gives you a Google Access Token. You can use it to access the Google API.
       var token = result.credential.accessToken;
       var user = result.user;
+
       // console.log(user);
       //console.log(token);
-      return { title: "Bienvenido", message: "Ingresaste con google" };
+
+      return { status: true, title: "Bienvenido", message: "Ingresaste con google" };
     }
   } catch (error) {
     var errorCode = error.code;
@@ -51,20 +59,8 @@ export const loginGoogle = async () => {
     if (errorCode === "auth/account-exists-with-different-credential") {
       message = "Error ya te encuentras registado con correo eletronico";
     } else if (errorCode == "auth / popup-closed-by-user") {
-
       message = "Error no terminaste de hacer el login con google";
     }
-    return { title: "Error", message }
+    return { status: false, title: "Error", message };
   }
-}
-
-
-
-
-
-
-
-
-
-
-
+};
