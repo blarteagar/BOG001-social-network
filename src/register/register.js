@@ -3,7 +3,8 @@ import { loadModal, closeModal } from "../component/modal.js";
 import {signOutUser} from "/FireFunctions/signOut.js";
 import {router} from "../router.js";
 
-export const userRegister = async () => {
+export const userRegister = async (event) => {
+  event.preventDefault();
   let userEmail = document.getElementById("emailRegister").value;
   let userPassword = document.getElementById("passRegister").value;
   let statusRegister = await createUser(userEmail, userPassword);

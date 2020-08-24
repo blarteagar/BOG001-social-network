@@ -81,8 +81,32 @@
     margin-bottom: 15%;
     
   }
-  
-   
+/* post */
+
+.Inputtexto {
+  background-color: #3a2c65;
+  border: 1px solid rgba(0, 0, 0, .0);
+  color:#D6D3D3;
+  font-family: "Catamaran", sans-serif;
+}
+ 
+.Inputtitle{
+  background-color : #3a2c65;
+  border: 1px solid rgba(0, 0, 0, .0);
+  padding: 9.5px;
+  font-family: "Catamaran", sans-serif;
+}
+
+.btnsave{
+  background-color : #A43A9A;
+  border: 1px solid  white;
+  color: #D6D3D3;
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+ 
+
+ 
 
 /* @media screen and (min-width: 740px){ */
   @media (min-width: 740px) {   
