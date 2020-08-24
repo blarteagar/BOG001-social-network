@@ -1,16 +1,14 @@
 import { watcher } from "../FireFunctions/signOut.js";
-import {
-  loginGoogle,
-  loginWithEmail,
-} from "../FireFunctions/signInEmailGoogle.js";
+import {loginGoogle,loginWithEmail} from "../FireFunctions/signInEmailGoogle.js";
 import { router } from "../router.js";
 import { loadModal, closeModal } from "../component/modal.js";
 
 export const LoginWithEmailAndPassword = async (event) => {
   event.preventDefault();
+  let loginNick = document.getElementById("nickNamelogin").value;
   let loginEmail = document.getElementById("emailLogin").value;
   let loginPass = document.getElementById("passLogin").value;
-  let statusLogin = await loginWithEmail(loginEmail, loginPass);
+  let statusLogin = await loginWithEmail(loginEmail, loginPass, loginNick);
   loadModal(statusLogin.title, statusLogin.message);
 
   if (statusLogin.title === "Bienvenido") {
@@ -53,6 +51,7 @@ export const loginComponent = {
       <div class="box-form">
       
       <form>
+      <input class="InputLogin" type="text" id="nickNamelogin" placeholder="Nick Name">
       <input class="InputLogin" type="email" id="emailLogin" placeholder="Ingresa tu email" required>
       <input class="InputLogin" type="password" name="password" id="passLogin" placeholder="Ingresa tu contraseña" required>
       </form>

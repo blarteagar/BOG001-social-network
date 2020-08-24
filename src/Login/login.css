@@ -90,7 +90,7 @@ form {
   grid-column-start: 2;
   grid-column-end: 10;
   grid-row-start: 8;
-  grid-row-end: 15;
+  grid-row-end: 16;
   flex-direction: column;
   border: 1px solid white;
   border-radius: 3px;
