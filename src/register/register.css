@@ -197,7 +197,7 @@ html, #root, body, .box-register {
         grid-column-end: 20;
         grid-row-start: 5;
         grid-row-end: 7;
-        font-size: 5px;
+        font-size: 20px;
         padding: 0;
         margin: 0;
         

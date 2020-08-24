@@ -1,13 +1,12 @@
 import {createUser} from "/FireFunctions/createUser.js";
 import { loadModal, closeModal } from "../component/modal.js";
-import {signOutUser} from "/FireFunctions/signOut.js";
-import {router} from "../router.js";
 
 export const userRegister = async (event) => {
   event.preventDefault();
   let userEmail = document.getElementById("emailRegister").value;
   let userPassword = document.getElementById("passRegister").value;
   let statusRegister = await createUser(userEmail, userPassword);
+  console.log("hola");
   loadModal(statusRegister.title, statusRegister.message);
   
 }
@@ -15,8 +14,6 @@ export const userRegister = async (event) => {
 export const registerView = { 
 
   render: async ()=> {
-      let root = document.getElementById("root");
-      root.innerHTML = '';
       const view =
      `
      
@@ -55,6 +52,7 @@ export const registerView = {
   afterRender: ()=> {
       let btnRegister = document.getElementById("btnRegister");
       btnRegister.addEventListener("click", userRegister);
+      
 
       
     }  
