@@ -1,12 +1,15 @@
 import { post } from "../FireFunctions/createPost.js";
 import { loadPost } from "../wall/wall.js";
- 
+
+
+let form;
 
 export const loadModal = (title,message,isForm = false) => {
 
   document.getElementById("headerModal").innerText = title;
   if(!isForm){
-    document.getElementById("formModal").style.display = "none"
+    document.getElementById("content").classList.remove("ModalContent")
+    form = document.getElementById("formModal").style.display = "none"
     document.getElementById("messageModal").style.display = "block"
     document.getElementById("messageModal").innerText = message;
   }else{
@@ -23,7 +26,7 @@ CLOSE.style.display = "none";
 
 const postModal = () => {
   document.getElementById("messageModal").style.display = "none";
-  let form = document.getElementById("formModal");
+  form = document.getElementById("formModal");
   form.style.display = "block"
 }
 
@@ -34,11 +37,13 @@ const savePost = async (event) =>{
   await post( title, idea);
   loadPost()
   loadModal("Post", "Compartiste tu idea exitosamente")
+  title.reset();
+  idea.reset();
 }
  
 export const windowModal = { 
   render: async () => {
-   let view = `<div class="modal-content"> 
+   let view = `<div id="content" class="modal-content"> 
    <header class="modal-header" id="closeModal">
      <h2 id="headerModal"></h2>
      <span id="closeButton" class="close">&times;</span>
@@ -46,9 +51,9 @@ export const windowModal = {
     <article id="bodyModal" class="modal-body"> 
      <section class="contentElement" id="contentElement">
         <h3 class="messageModal" id="messageModal"></h3>
-        <div class="formModal" id="formModal">
-        <input class="Inputtitle" type="texto" id="textTitle" placeholder="Ingresa tu titulo">
-        <input class="Inputtexto" type="texto"  id="textPost" placeholder="Escribe tu idea...">       
+        <div id="formModal">
+        <textarea name="" class="Inputtitle" id="textTitle" cols="" rows="2">Escribe el titulo....</textarea>
+        <textarea name=""class="Inputtexto" id="textPost" cols="" rows="4">Escribe aquí tu idea...</textarea>
         <button class="btnsave" id="btnsave">Publicar</button>
         </div>
      </section>

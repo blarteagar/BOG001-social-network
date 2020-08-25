@@ -19,7 +19,7 @@ export const router = async (route) => {
             break;
         
         case "#/wall":
-            debugger
+        
             window.location.hash = "#/wall";
             content.innerHTML = await  wallView.render();
             wallView.afterRender();

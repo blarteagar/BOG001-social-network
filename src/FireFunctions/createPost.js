@@ -4,7 +4,6 @@ var docRef;
 moment.locale('es'); 
 
 export const post = async (title, idea, fecha) => {
-  debugger
     try {
      docRef = await db.collection("Posts").add({
       uid: firebase.auth().currentUser.uid,
@@ -15,10 +14,10 @@ export const post = async (title, idea, fecha) => {
       fecha:  moment().format('MMMM Do YYYY, h:mm:ss a')
     });
     console.log("post creado: ", docRef.id);
-    debugger
+    
 } catch (error) {
-      debugger
-    console.error("Error post: ", error);
+    
+    console.error("Error al crear el  post: ", error);
   }
 };
 
