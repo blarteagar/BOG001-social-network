@@ -5,6 +5,8 @@ import { loadModal, closeModal } from "../component/modal.js";
 import { userRegister } from "../register/register.js";
 
 export const LoginWithEmailAndPassword = async () => {
+  
+
   let loginEmail = document.getElementById("emailLogin").value;
   let loginPass = document.getElementById("passLogin").value;
   let statusLogin = await loginWithEmail(loginEmail, loginPass);
@@ -12,8 +14,10 @@ export const LoginWithEmailAndPassword = async () => {
 
   if (statusLogin.title === "Bienvenido") {
     await watcher();
-    await router("#/wall");
+    history.pushState("#wall", "", "#wall")
+    await router("#wall");
   } else {
+    
     console.log("error");
   }
 };
@@ -23,12 +27,13 @@ const googleWallLogin = async () => {
   loadModal(statusGoogle.title, statusGoogle.message);
   if (statusGoogle == statusGoogle.status) {
     await watcher();
-    await router("#/wall");
+    await router("#wall");
   }
 };
 
 export const RedirectToRegister = () => {
-  router("#/register");
+  history.pushState("#register", "", "#register");
+  router("#register"); 
 };
 
 export const loginComponent = {
@@ -51,7 +56,12 @@ export const loginComponent = {
       </form>
       </div>
       <div class = "actionsLogin">
-      <a href= "#/register" class="btn2"  type= "button"  id="userRegister">crear tu cuenta</a>
+
+
+      <a class="btn2"  type= "button"  id="userRegister">crear tu cuenta</a>
+
+
+
       <input type="button" class="loginButton" id="loginButton" value="ENTRAR"/>
       </div> 
       </div>
@@ -69,3 +79,6 @@ export const loginComponent = {
     userRegister.addEventListener("click", RedirectToRegister);
   },
 };
+
+
+//<a href= "#/register" class="btn2"  type= "button"  id="userRegister">crear tu cuenta</a>

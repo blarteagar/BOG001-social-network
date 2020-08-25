@@ -7,8 +7,8 @@ export const userRegister = async (event) => {
   let userEmail = document.getElementById("emailRegister").value;
   let userPassword = document.getElementById("passRegister").value;
   let statusRegister = await createUser(userEmail, userPassword);
-  console.log("hola");
   loadModal(statusRegister.title, statusRegister.message);
+  //history.pushState("#register", "", "#register");
   
 }
 

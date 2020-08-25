@@ -6,27 +6,32 @@ export const router = async (route) => {
     
     const content = document.getElementById("root");
     switch (route) {
-        case "#/register":
-            window.location.hash="#/register";
+
+        case "#register":         
             content.innerHTML= await registerView.render();
             registerView.afterRender();
             break;
         
-        case "#/login":
-            //window.location.hash="#/login";
+        case "#login":
+            //window.location.hash="#login";          
             content.innerHTML = await loginComponent.render();
             loginComponent.afterRender();
             break;
         
-        case "#/wall":
-            window.location.hash = "#/wall";
+        case "#wall":
             content.innerHTML = await  wallView.render();
             wallView.afterRender();
             break;
 
+           
+        case "":
+            location.hash="#login"    
+            history.pushState("#login", "", "#login")
+            break;
+    
+
         default:
-            content.innerHTML = await loginComponent.render();
-            loginComponent.afterRender();
+            "404 "
             break;
     }
 }

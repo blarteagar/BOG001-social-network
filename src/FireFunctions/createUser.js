@@ -14,7 +14,7 @@ export const createUser = async (email, password) => {
     console.log("Hemos enviado un correo de verificación, por favor valida tu cuenta para continuar.");
     title="Registro Exitoso";
     message = "Te hemos enviado un correo, por favor valida tu cuenta";
-    
+    history.replaceState("#register", "", "#register");
     return {title, message};
      
     //return "Registrado Correctamente"
@@ -43,7 +43,8 @@ export const createUser = async (email, password) => {
     } else {
       errorCode;
     }    
-
+    
+    history.replaceState("#register", "", "#register");
     return {title, message};
   }
 
