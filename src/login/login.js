@@ -23,11 +23,15 @@ export const LoginWithEmailAndPassword = async () => {
 };
 
 const googleWallLogin = async () => {
+  event.preventDefault();
   let statusGoogle = await loginGoogle();
   loadModal(statusGoogle.title, statusGoogle.message);
-  if (statusGoogle == statusGoogle.status) {
+
+  if (statusGoogle.status === true) {
     await watcher();
     await router("#wall");
+  } else {
+    console.error(error)
   }
 };
 
@@ -70,6 +74,7 @@ export const loginComponent = {
         `;
     return view;
   },
+  
   afterRender: async () => {
     let loginGoogleItem = document.getElementById("loginGoogleid");
     loginGoogleItem.addEventListener("click", googleWallLogin);
