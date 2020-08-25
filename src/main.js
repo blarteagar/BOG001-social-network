@@ -1,6 +1,7 @@
-// Este es el punto de entrada de tu aplicacion
-
-//import { myFunction } from './lib/index.js';
-
-//myFunction();
-
+import {router} from "/router.js";
+import { windowModal } from './component/modal.js'
+window.addEventListener('load', () =>{router(window.location.hash)});
+console.log(window.location.hash);
+//router(window.location.hash);
+windowModal.render();
+windowModal.afterRender();
