@@ -7,6 +7,9 @@ import { postItem } from "./itemPost.js";
 const ideaModal = (event) =>{
  event.preventDefault();
  loadModal(" Crear Publicación","",true);
+ document.getElementById("content").classList.add("ModalContent")
+ document.getElementById("closeModal").classList.add("headerPublicacion")
+ document.getElementById("formModal").classList.add("modalPubicacion")
 }
 
 const leave =  async(event) => {
@@ -19,7 +22,7 @@ const leave =  async(event) => {
 export const loadPost = async () => {
   let posts = await paintpost()
   let principal = document.getElementById("container-post")
-  principal.innerHTML = ""
+  principal.innerHTML = "";
   posts.forEach((postElement) => {
    let component = postItem.render(postElement.data());
    let newElement = document.createElement("div")
