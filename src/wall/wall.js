@@ -54,7 +54,8 @@ const wallView = {
 });
     
     let btnOutWall = document.getElementById("btnOutWall");
-    btnOutWall.addEventListener("click", () => {
+    btnOutWall.addEventListener("click", (event) => {
+    event.preventDefault();
     signOutUser();
     history.go(-history.length);
     router("");

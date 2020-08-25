@@ -1,7 +1,6 @@
 import {createUser} from "/FireFunctions/createUser.js";
 import { loadModal, closeModal } from "../component/modal.js";
 
-
 export const userRegister = async (event) => {
   event.preventDefault();
   let userEmail = document.getElementById("emailRegister").value;
