@@ -5,9 +5,11 @@ export const loadModal = (title,message,isForm = false) => {
 
   document.getElementById("headerModal").innerText = title;
   if(!isForm){
-    document.getElementById("formModal").style.display = "none"
-    document.getElementById("messageModal").style.display = "block"
-    document.getElementById("messageModal").innerText = message;
+  let stayle = document.getElementById("formModal").style.display = "none";
+  // stayle.element.classList.add("mystyle")
+  // style.element.classList.remove("mystyle");
+  document.getElementById("messageModal").style.display = "block";
+  document.getElementById("messageModal").innerText = message;
   }else{
     postModal()
   }
