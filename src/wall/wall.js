@@ -1,5 +1,7 @@
 import { signOutUser } from "../FireFunctions/signOut.js"
 import { router } from "../router.js";
+import { createPost } from "../FireFunctions/createPost.js"
+import { postItem } from "./itemPost.js";
 
 const wallView = {
 
@@ -66,9 +68,8 @@ const wallView = {
     console.log("nos vamos :-(");
 });
     let btnShareWall = document.getElementById("btnShareWall");
-    btnShareWall.addEventListener("click", () => {
-      console.log("compartiendo")
-});
+    btnShareWall.addEventListener("click", createPost);
+
     let btnEditWall = document.getElementById("btnEditWall");
     btnEditWall.addEventListener("click", () => {
       console.log("editando")
