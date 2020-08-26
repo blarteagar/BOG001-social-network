@@ -7,7 +7,10 @@ window.addEventListener('load', () => {
     console.log("está corriendo el load")
     console.log('el state es:' + event.state);
     console.log('el hash es:' + location.hash);
-    router(location.hash)});
+    router(location.hash)
+    //router(history.state)
+  
+  });
 
 
 windowModal.render();
@@ -22,5 +25,6 @@ window.addEventListener('popstate', function(event) {
     console.log('el state es:' + event.state);
     console.log('el hash es:' + location.hash);
     router(location.hash)
+    //router(history.state)
   });
 

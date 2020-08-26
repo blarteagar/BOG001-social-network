@@ -1,10 +1,11 @@
 import {registerView} from "./register/register.js";
 import {loginComponent} from "./login/login.js";
-import wallView from "./wall/wall.js";
+import {wallView, loadPost} from "./wall/wall.js";
 
 export const router = async (route) => {
     
     const content = document.getElementById("root");
+    
     switch (route) {
 
         case "#register":         
@@ -21,6 +22,7 @@ export const router = async (route) => {
         case "#wall":
             content.innerHTML = await  wallView.render();
             wallView.afterRender();
+            loadPost();
             break;
 
            
