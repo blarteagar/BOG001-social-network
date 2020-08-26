@@ -26,8 +26,7 @@ CLOSE.style.display = "none";
 
 const postModal = () => {
   document.getElementById("messageModal").style.display = "none";
-  form = document.getElementById("formModal");
-  form.style.display = "block"
+  form = document.getElementById("formModal").style.display = "block"
 }
 
 const savePost = async (event) =>{
