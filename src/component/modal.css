@@ -2,6 +2,157 @@
 
 .modal {
   
+  display: none; 
+  position: fixed; 
+  z-index: 3;
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  overflow: auto; 
+  background-color:  rgba(48, 46, 47, 0.5);
+}
+
+  .modal-content {
+    margin: auto;
+    width: 87%;
+    height: 22%;
+    color: #D6D3D3;
+    text-align: center;
+    background-color: #3A2C65;
+    border: 1px solid #C4C4C4;
+    border-width: 1px 1px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0   rgba(241, 228, 238, 0.2),0 6px 20px 0   rgba(241, 228, 238, 0.2);
+  }
+
+/* The Close Button */
+.close {
+  color: #D6D3D3;
+  font-size: 28px;
+   
+}
+
+.close:hover, .close:focus {
+  color:  #77136f;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  display: grid;
+  margin-bottom: 0px;
+  grid-template-columns: 10fr 1fr;
+  grid-gap: 0;
+  background-color:#A43A9A;
+  border: 1px solid #C4C4C4;
+  border-width: 1px 1px;
+  border-radius: 3px;
+  width: 100%;
+  height: 30%;
+}
+
+.modal-header h2{
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 20px;
+  margin: auto;
+  padding-left: 12%;
+}
+
+.modal-body, #contentElement {
+  display: grid;
+  grid-gap: 15px;
+  padding: 10px;
+}
+
+
+#contentElement section{
+  display: grid;
+  grid-template-rows: 2fr;
+  text-align: center;
+  align-items: center;
+  
+}
+
+ h3{
+  font-family: 'Chakra Petch', sans-serif;
+  font-size: 18px;
+  margin-top: 5%;
+  margin-bottom: 15%;
+  
+}
+/* post */
+ 
+
+
+.Inputtexto {
+   
+  background-color: #3a2c65;
+  color: #D6D3D3;
+  font-family: "Catamaran", sans-serif;
+  font-size: 16px;
+  margin-inline-start: 15px;
+  border: none;
+  overflow: auto;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  
+}
+
+.Inputtitle{
+  background-color: #3a2c65;
+    padding: 9px;
+    color: #50C5B7;
+    font-family: "Catamaran", sans-serif;
+    text-align: center;
+    font-size: 18px;
+    margin-left: -7px;
+    border: none;
+    border: none;
+    overflow: auto;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+   
+}
+
+.btnsave{
+  background-color: #A43A9A;
+  border: 1px solid #D6D3D3;
+  color: #D6D3D3;
+  font-family: 'Chakra Petch', sans-serif;
+  margin-top: 14px;
+  width: 171px;
+  height: 32px;
+  font-size: 14px;
+}
+
+
+.ModalContent{
+  width: 71%;
+  height: 321px;
+}
+
+.headerPublicacion{
+  width: 100%;
+  height: 40px
+}
+
+.modalPubicacion{
+width: 100%;
+height: 300px;
+}
+
+
+
+
+
+@media  screen and  (min-width: 740px) {   
+   
+  .modal {
     display: none; 
     position: fixed; 
     z-index: 3;
@@ -38,34 +189,29 @@
     text-decoration: none;
     cursor: pointer;
   }
+
+  .modal-header h2{
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 3.5vh;
+    padding-left: 14%;
+}
+    
   
+
   .modal-header {
     display: grid;
-    margin-bottom: 0px;
+    margin: auto;
     grid-template-columns: 10fr 1fr;
     grid-gap: 0;
     background-color:#A43A9A;
-    border: 1px solid #C4C4C4;
-    border-width: 1px 1px;
-    border-radius: 3px;
+    border: 0.0vw solid #C4C4C4;
+    border-width: 2px 2px;
+    border-radius: 4px;
     width: 100%;
-    height: 30%;
+    height: 30%; 
+     
   }
-  
-  .modal-header h2{
-    font-family: 'Chakra Petch', sans-serif;
-    font-size: 20px;
-    margin: auto;
-    padding-left: 12%;
-  }
-  
-  .modal-body, #contentElement {
-    display: grid;
-    grid-gap: 15px;
-    padding: 10px;
-  }
-  
-  
+   
   #contentElement section{
     display: grid;
     grid-template-rows: 2fr;
@@ -73,124 +219,92 @@
     align-items: center;
     
   }
-  
-   h3{
-    font-family: 'Chakra Petch', sans-serif;
-    font-size: 18px;
-    margin-top: 5%;
-    margin-bottom: 15%;
-    
+ .modal-body {
+    display: grid;
+    padding: 10px;
+    max-width: 800px;
+    max-height: 700px;
+    grid-template-rows: 3fr;
+    margin: auto;
   }
-/* post */
+  h3{
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 3vh;
+    margin-top: 20px;
+  }
+  
+  /* post */
+ 
+
 
 .Inputtexto {
   background-color: #3a2c65;
-  border: 1px solid rgba(0, 0, 0, .0);
-  color:#D6D3D3;
+ color: #D6D3D3;
   font-family: "Catamaran", sans-serif;
+  font-size: 24px;
+  text-align: center;
+  margin-right: 12px;
+  padding: 11px;
+  width: 231px;
+  border: none;
+  overflow: auto;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+    
 }
- 
+
 .Inputtitle{
-  background-color : #3a2c65;
-  border: 1px solid rgba(0, 0, 0, .0);
-  padding: 9.5px;
+   
+  background-color: #3a2c65;
+  padding: 9px;
+  color: #50C5B7;
   font-family: "Catamaran", sans-serif;
+  text-align: center;
+  font-size: 26px;
+  margin-left: -20px;
+  border: none;
+  overflow: auto;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  
 }
 
 .btnsave{
-  background-color : #A43A9A;
-  border: 1px solid  white;
+  background-color: #A43A9A;
+  border: 1px solid #D6D3D3;
   color: #D6D3D3;
   font-family: 'Chakra Petch', sans-serif;
+  margin-top: 4px;
+  width: 251px;
+  height: 39px;
+  font-size: 24px;
 }
 
- 
 
- 
+.ModalContent{
+  width: 339px;
+    height: 501px;
 
-/* @media screen and (min-width: 740px){ */
-  @media (min-width: 740px) {   
-     
-    .modal {
-      display: none; 
-      position: fixed; 
-      z-index: 3;
-      left: 0;
-      top: 0;
-      width: 100%; 
-      height: 100%; 
-      overflow: auto; 
-      background-color: rgba(48, 46, 47, 0.5);
-    }
-
-
-    .modal-content {
-      margin: auto;
-      width: 70%;
-      height: 25%;
-      text-align: center;
-      color: #D6D3D3;
-      background-color: #3A2C65;
-      border: 0.1vw solid #C4C4C4;
-      border-width: 2px 2px;
-      border-radius: 5px;
-      box-shadow:  0 4px 8px 0    rgba(241, 228, 238, 0.3),0 6px 20px 0   rgba(241, 228, 238, 0.3);
-    }
-    
-    
-    .close {
-      color: #D6D3D3;
-      font-size: 3.2vw;
-      
-    }
-    
-    .close:hover, .close:focus {
-      color:  #77136f;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .modal-header h2{
-      font-family: 'Chakra Petch', sans-serif;
-      font-size: 3.0vw;
-      padding-left: 14%;
-      
-    }
-
-    .modal-header {
-      display: grid;
-      margin: auto;
-      grid-template-columns: 10fr 1fr;
-      grid-gap: 0;
-      background-color:#A43A9A;
-      border: 0.0vw solid #C4C4C4;
-      border-width: 2px 2px;
-      border-radius: 4px;
-      width: 100%;
-      height: 30%; 
-       
-    }
-     
-    #contentElement section{
-      display: grid;
-      grid-template-rows: 2fr;
-      text-align: center;
-      align-items: center;
-      
-    }
-   .modal-body {
-      display: grid;
-      padding: 10px;
-      max-width: 800px;
-      max-height: 700px;
-      grid-template-rows: 3fr;
-      margin: auto;
-    }
-    h3{
-      font-family: 'Chakra Petch', sans-serif;
-      font-size: 2.7vw;
-      margin-top: 20px;
-      
-    }
-    
 }
+
+.headerPublicacion{
+  width: 100%;
+  height: 65px
+}
+
+.modalPubicacion{
+    display: inline-block;
+    padding: 3px;
+    
+   
+}
+
+  
+}
+
+
+ 

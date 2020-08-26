@@ -1,6 +1,6 @@
 import {registerView} from "./register/register.js";
 import {loginComponent} from "./login/login.js";
-import wallView from "./wall/wall.js";
+import {wallView,loadPost} from "./wall/wall.js";
 
 export const router = async (route) => {
     
@@ -19,9 +19,11 @@ export const router = async (route) => {
             break;
         
         case "#/wall":
+        
             window.location.hash = "#/wall";
             content.innerHTML = await  wallView.render();
             wallView.afterRender();
+            loadPost()
             break;
 
         default:
@@ -31,8 +33,7 @@ export const router = async (route) => {
     }
 }
     
-
-
+ 
  
 
 

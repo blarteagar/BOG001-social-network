@@ -1,10 +1,14 @@
 import { watcher } from "../FireFunctions/signOut.js";
-import {loginGoogle, loginWithEmail} from "../FireFunctions/signInEmailGoogle.js";
+import {
+  loginGoogle,
+  loginWithEmail,
+} from "../FireFunctions/signInEmailGoogle.js";
 import { router } from "../router.js";
 import { loadModal, closeModal } from "../component/modal.js";
-import { userRegister } from "../register/register.js";
 
-export const LoginWithEmailAndPassword = async () => {
+export const LoginWithEmailAndPassword = async (event) => {
+  event.preventDefault();
+  
   let loginEmail = document.getElementById("emailLogin").value;
   let loginPass = document.getElementById("passLogin").value;
   let statusLogin = await loginWithEmail(loginEmail, loginPass);
@@ -14,20 +18,24 @@ export const LoginWithEmailAndPassword = async () => {
     await watcher();
     await router("#/wall");
   } else {
-    console.log("error");
+    console.error("error");
   }
 };
 
-const googleWallLogin = async () => {
+const googleWallLogin = async (event) => {
+  event.preventDefault();
   let statusGoogle = await loginGoogle();
   loadModal(statusGoogle.title, statusGoogle.message);
-  if (statusGoogle == statusGoogle.status) {
+  if (statusGoogle.status === true) {
     await watcher();
     await router("#/wall");
+  } else {
+    console.error("error");
   }
 };
 
 export const RedirectToRegister = () => {
+  window.location.hash = "#/register";
   router("#/register");
 };
 
@@ -46,6 +54,7 @@ export const loginComponent = {
       <div class="box-form">
       
       <form>
+       
       <input class="InputLogin" type="email" id="emailLogin" placeholder="Ingresa tu email" required>
       <input class="InputLogin" type="password" name="password" id="passLogin" placeholder="Ingresa tu contraseña" required>
       </form>

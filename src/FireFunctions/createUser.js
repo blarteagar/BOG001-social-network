@@ -9,6 +9,7 @@ export const createUser = async (email, password) => {
   try {
     await firebase.auth().createUserWithEmailAndPassword(email, password);
     var user = firebase.auth().currentUser;
+<<<<<<< HEAD
     user.sendEmailVerification(actionCodeSettings);
     console.log(user);
     console.log("Hemos enviado un correo de verificación, por favor valida tu cuenta para continuar.");
@@ -19,6 +20,15 @@ export const createUser = async (email, password) => {
      
     //return "Registrado Correctamente"
     
+=======
+    
+    await user.sendEmailVerification(actionCodeSettings);
+    console.log(user);
+    console.log("Hemos enviado un correo de verificación, por favor valida tu cuenta para continuar.");
+     
+    //return "Registrado Correctamente"
+       return {title: "Registro Exitoso", message:"Te hemos enviado un correo, por favor valida tu cuenta"};
+>>>>>>> 7a639a093f067e1dcc89ead1de7ecdb7046575fe
   } catch (error) {
     var errorCode = error.code;
     var errorMessage = error.message;
@@ -43,10 +53,17 @@ export const createUser = async (email, password) => {
     } else {
       errorCode;
     }    
+<<<<<<< HEAD
 
     return {title, message};
   }
 
 
+=======
+  }
+
+  console.log(message)
+  return {title, message};
+>>>>>>> 7a639a093f067e1dcc89ead1de7ecdb7046575fe
   
 };
