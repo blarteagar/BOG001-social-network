@@ -26,7 +26,7 @@ CLOSE.style.display = "none";
 
 const postModal = () => {
   document.getElementById("messageModal").style.display = "none";
-  form = document.getElementById("formModal").style.display = "block"
+  form = document.getElementById("formModal").style.display = "block";
 }
 
 const savePost = async (event) =>{
@@ -36,8 +36,7 @@ const savePost = async (event) =>{
   await post( title, idea);
   loadPost()
   loadModal("Post", "Compartiste tu idea exitosamente")
-  title.reset();
-  idea.reset();
+  
 }
  
 export const windowModal = { 
