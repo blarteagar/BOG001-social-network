@@ -15,12 +15,14 @@ const ideaModal = (event) =>{
 const leave =  async(event) => {
   event.preventDefault();
   await signOutUser();
-   await router("#/login");
+  history.replaceState("#login", "", "#login");
+  router("#login");
+  
   console.log("nos vamos :-(");
 }
  
 export const loadPost = async () => {
-  let posts = await paintpost()
+  let posts = await paintpost();
   let principal = document.getElementById("container-post")
   principal.innerHTML = "";
   posts.forEach((postElement) => {
@@ -30,6 +32,8 @@ export const loadPost = async () => {
    principal.appendChild(newElement);
   });
 }
+
+
 export const wallView = {
 
   render: async () => {
