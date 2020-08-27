@@ -33,6 +33,12 @@ export const loadPost = async () => {
   });
 }
 
+export const postBar = () => {
+  if (firebase.auth().currentUser.uid === true);
+  
+}
+
+
 
 export const wallView = {
 
@@ -74,17 +80,7 @@ export const wallView = {
   },
   afterRender: () => {
   document.getElementById("idea").addEventListener("click", ideaModal);
-  document.getElementById("btnOutWall").addEventListener("click", leave)
-  
+  document.getElementById("btnOutWall").addEventListener("click", leave);
+  },
 
-//     let btnEditWall = document.getElementById("btnEditWall");
-//     btnEditWall.addEventListener("click", () => {
-//       console.log("editando")
-// });
-//     let btnEraseWall = document.getElementById("btnEraseWall");
-//     btnEraseWall.addEventListener("click", () => {
-//       console.log("borrando")
-// });
- },
-
-};
+}
