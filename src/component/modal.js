@@ -29,7 +29,7 @@ const postModal = () => {
   form = document.getElementById("formModal").style.display = "block";
 }
 
-const savePost = async (event) =>{
+const savePost = async () =>{
   // event.preventDefaul();
   let title = document.getElementById("textTitle").value;
   let idea = document.getElementById("textPost").value;
