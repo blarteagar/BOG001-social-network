@@ -3,7 +3,7 @@ import {loginComponent} from "./login/login.js";
 import {wallView, loadPost} from "./wall/wall.js";
 
 export const router = async (route) => {
-    
+
     const content = document.getElementById("root");
     
     switch (route) {
@@ -12,37 +12,26 @@ export const router = async (route) => {
             content.innerHTML= await registerView.render();
             registerView.afterRender();
             break;
-        
+
         case "#login":
             //window.location.hash="#login";          
             content.innerHTML = await loginComponent.render();
             loginComponent.afterRender();
             break;
-        
+
         case "#wall":
             content.innerHTML = await  wallView.render();
             wallView.afterRender();
             loadPost();
             break;
 
-           
         case "":
             location.hash="#login"    
             history.pushState("#login", "", "#login")
             break;
-    
 
         default:
             "404 "
             break;
     }
 }
-    
-
-
- 
-
-
-
-
-
