@@ -243,6 +243,9 @@ html, body, .wall-container, #root {
   grid-column-end: 11;
   height: 20px;
   margin: auto;
+  background-color: #6e6095;
+  color: #6e6095;
+  border: none;
   
   
   
