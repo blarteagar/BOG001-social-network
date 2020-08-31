@@ -9,11 +9,11 @@ export const loadModal = (title,message,isForm = false) => {
   document.getElementById("headerModal").innerText = title;
   if(!isForm){
     document.getElementById("content").classList.remove("ModalContent")
-    form = document.getElementById("formModal").style.display = "none"
-    document.getElementById("messageModal").style.display = "block"
+    form = document.getElementById("formModal").style.display = "none";
+    document.getElementById("messageModal").style.display = "block";
     document.getElementById("messageModal").innerText = message;
   }else{
-    postModal()
+    postModal();
   }
   let modal = document.getElementById("myModal");
   modal.style.display = "flex";
@@ -33,8 +33,8 @@ const savePost = async () =>{
   // event.preventDefaul();
   let idea = document.getElementById("textPost").value;
   await post(idea);
-  loadPost()
-  loadModal("Post", "Compartiste tu idea exitosamente")
+  loadPost();
+  loadModal("Post", "Compartiste tu idea exitosamente");
   document.getElementById("textPost").value = "Escribe aquí tu idea...";
 }
  
@@ -59,8 +59,8 @@ export const windowModal = {
      document.getElementById("myModal").innerHTML = view;
   },
   afterRender: () => {
-    document.getElementById("closeButton").addEventListener('click',closeModal)
-    document.getElementById("btnsave").addEventListener('click',savePost)
+    document.getElementById("closeButton").addEventListener('click',closeModal);
+    document.getElementById("btnsave").addEventListener('click',savePost);
   } 
 }
      
