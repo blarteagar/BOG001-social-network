@@ -35,7 +35,7 @@ const savePost = async () =>{
   await post(idea);
   loadPost()
   loadModal("Post", "Compartiste tu idea exitosamente")
-  
+  document.getElementById("textPost").value = "Escribe aquí tu idea...";
 }
  
 export const windowModal = { 
