@@ -14,7 +14,6 @@ export const router = async (route) => {
             break;
         
         case "#login":
-            //window.location.hash="#login";          
             content.innerHTML = await loginComponent.render();
             loginComponent.afterRender();
             break;
