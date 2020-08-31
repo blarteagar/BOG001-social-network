@@ -31,9 +31,8 @@ const postModal = () => {
 
 const savePost = async () =>{
   // event.preventDefaul();
-  let title = document.getElementById("textTitle").value;
   let idea = document.getElementById("textPost").value;
-  await post( title, idea);
+  await post(idea);
   loadPost()
   loadModal("Post", "Compartiste tu idea exitosamente")
   
@@ -50,8 +49,7 @@ export const windowModal = {
      <section class="contentElement" id="contentElement">
         <h3 class="messageModal" id="messageModal"></h3>
         <div id="formModal">
-        <textarea name="" class="Inputtitle" id="textTitle" cols="" rows="2">Escribe el titulo....</textarea>
-        <textarea name=""class="Inputtexto" id="textPost" cols="" rows="4">Escribe aquí tu idea...</textarea>
+       <textarea name=""class="Inputtexto" id="textPost" cols="" rows="5">Escribe aquí tu idea...</textarea>
         <button class="btnsave" id="btnsave">Publicar</button>
         </div>
      </section>
