@@ -25,11 +25,13 @@ export const loadPost = async () => {
   let posts = await paintpost();
   let principal = document.getElementById("container-post");
   principal.innerHTML = "";
-  posts.forEach((postElement) => {
-    let component = postItem.render(postElement.data());
+  posts.forEach( async (postElement) => {
+    let component = await postItem.render(postElement.id, postElement.data());
     let newElement = document.createElement("div");
     newElement.innerHTML = component;
     principal.appendChild(newElement);
+    postItem.afterRender(postElement.id);
+    
   });
 };
 
