@@ -20,8 +20,6 @@ html, body, .wall-container, #root {
   grid-template-rows: 20% 70% 10%;
   height: 100%;
   width: 100%;
-    
-
 }
 
 .headerWall {
@@ -35,7 +33,6 @@ html, body, .wall-container, #root {
   border-width: 0.5px;
   padding: 0;
   height: 100%;
-  
 }
 
 .mainWall {
@@ -54,8 +51,8 @@ html, body, .wall-container, #root {
   align-items: center;
   font-size: 14px;
   height: 100%;
-  
 }
+
 .TechMewall {
   grid-row-start: 1;
   grid-row-end: 2;
@@ -246,11 +243,25 @@ html, body, .wall-container, #root {
   background-color: #6e6095;
   color: #6e6095;
   border: none;
-  
-  
-  
-
 }
+
+.iconPost, .editButton, .eraseButton {
+  height: 16px;
+  margin: auto;
+  background-color: #6e6095;
+  color: #6e6095;
+  border: none;
+}
+
+.editButton {
+  grid-column: 1 / 2;
+}
+
+.eraseButton {
+  grid-column: 2 / 3;
+}
+
+
 
 
 
@@ -317,36 +328,6 @@ html, body, .wall-container, #root {
   height: 35px;
   box-sizing: border-box;
 }
-
-.postBar {
-  display: grid;
-  grid-column: repeat (20, 1fr);
-  grid-row: repeat (1, 1fr);
-  background-color:#6E6095;
-}
-
-#btnEdit {
-  grid-row: 1 / 1;
-  grid-column: 1 / 2;
-}
-
-#btnErase{
-  grid-row: 1 / 1;
-  grid-column: 2 / 3;
-}
-#btnLike {
-  grid-row: 1 / 1;
-  grid-column: 20 / 21;
-}
-
-.iconButton {
-  border: 0;
-  margin: 0;
-  padding: 0;
-  height: 0.8em;
-  width: 0.8em;
-}
-
 
 @media screen and (min-width: 768px) {
   .header,

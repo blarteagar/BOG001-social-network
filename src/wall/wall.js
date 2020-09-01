@@ -4,6 +4,8 @@ import { loadModal } from "../component/modal.js";
 import { paintpost, post } from "../FireFunctions/createPost.js";
 import { postItem } from "./itemPost.js";
 
+
+
 const ideaModal = (event) => {
   event.preventDefault();
   loadModal(" Crear Publicación", "", true);
@@ -25,13 +27,14 @@ export const loadPost = async () => {
   let posts = await paintpost();
   let principal = document.getElementById("container-post");
   principal.innerHTML = "";
-  posts.forEach( async (postElement) => {
+  posts.forEach(async (postElement) => {
     let component = await postItem.render(postElement.id, postElement.data());
     let newElement = document.createElement("div");
     newElement.innerHTML = component;
     principal.appendChild(newElement);
     postItem.afterRender(postElement.id);
-    
+
+
   });
 };
 
@@ -75,14 +78,8 @@ export const wallView = {
   afterRender: () => {
     document.getElementById("idea").addEventListener("click", ideaModal);
     document.getElementById("btnOutWall").addEventListener("click", leave);
-
-    //     let btnEditWall = document.getElementById("btnEditWall");
-    //     btnEditWall.addEventListener("click", () => {
-    //       console.log("editando")
-    // });
-    //     let btnEraseWall = document.getElementById("btnEraseWall");
-    //     btnEraseWall.addEventListener("click", () => {
-    //       console.log("borrando")
-    // });
-  },
+    },
 };
+
+
+

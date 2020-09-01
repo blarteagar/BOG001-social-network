@@ -1,12 +1,29 @@
 import { likeFunction, counterFunction } from "../FireFunctions/likes.js"
+import { theAuthor, newBtns } from "../wall/addButttons.js"
 
 export const postItem = {
 
-  render: (postId , postData) => {
-    
+  render: (postId, postData) => {
+
     let buttonId = "btnHeart" + postId;
     let counterId = "counter" + postId;
 
+//Blanca
+    let myUser = (firebase.auth().currentUser.uid) + postId;
+    let author = (postData.uid) + postId;
+
+    let bottomId = "bottom" + postId;
+    let editId = "btnEdit" + postId;
+    let eraseId = "btnErase" + postId;
+    let buttons = "";
+
+    if (theAuthor(myUser, author)) {
+      console.log("Usuario conectado es el autor del post");
+      buttons=newBtns(editId, eraseId);
+    }  else {
+      buttons="";
+    };
+//Blanca
 
     let view = `<div class="box-post"> 
      <header class="headerPost">
@@ -19,21 +36,18 @@ export const postItem = {
      </main>
      
      <footer class="footerPost" id="footerPostId">
+     ${buttons}//Blanca
      <p class="likesCount" id=${counterId}></p>
      <button class="heartWall"  id=${buttonId}><img class="heartWall" src="../img/heart.png"></button>
-     
      </footer>
-      
     </div>`;
-
-    
+  
     return view;
-
   },
   afterRender: async (postId) => {
     let buttonId = "btnHeart" + postId;
     let counterId = "counter" + postId;
-
+    
     let btnHeartThisPost = document.getElementById(buttonId);
 
     btnHeartThisPost.addEventListener("click", () => {
@@ -46,7 +60,13 @@ export const postItem = {
 
     counter.appendChild(counterText);
 
+  
+  
   },
 };
 
 //<h1 id="title" class="title">${data.title}</h1>
+
+/*
+   
+ */
