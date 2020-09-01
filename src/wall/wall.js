@@ -30,7 +30,7 @@ export const loadPost = async () => {
     let newElement = document.createElement("div");
     newElement.innerHTML = component;
     principal.appendChild(newElement);
-    postItem.afterRender(postElement.id);
+    await postItem.afterRender(postElement.id);
     
   });
 };

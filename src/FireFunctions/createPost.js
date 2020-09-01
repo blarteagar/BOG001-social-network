@@ -11,7 +11,8 @@ export const post = async (title, idea, fecha) => {
       idea: idea,
       name: firebase.auth().currentUser.displayName || "no definido",
       email: firebase.auth().currentUser.email,
-      fecha:  moment().format('MMMM Do YYYY, h:mm:ss a')
+      fecha:  moment().format('MMMM Do YYYY, h:mm:ss a'),
+      
     });
     console.log("post creado: ", docRef.id);
     
