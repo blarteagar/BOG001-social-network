@@ -3,11 +3,10 @@ var auth = firebase.auth().currentUser;
 var docRef;
 moment.locale('es'); 
 
-export const post = async (title, idea, fecha) => {
+export const post = async (idea) => {
     try {
      docRef = await db.collection("Posts").add({
       uid: firebase.auth().currentUser.uid,
-      title: title,
       idea: idea,
       name: firebase.auth().currentUser.displayName || "no definido",
       email: firebase.auth().currentUser.email,

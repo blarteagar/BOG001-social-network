@@ -183,7 +183,8 @@ form {
 
 .Img {
   z-index: 0;
-  position: absolute;
+  object-fit: cover;
+  object-position: center;
   bottom: 0px;
   left: 0px;
   right: 0px;

@@ -78,7 +78,8 @@ export const wallView = {
   afterRender: () => {
     document.getElementById("idea").addEventListener("click", ideaModal);
     document.getElementById("btnOutWall").addEventListener("click", leave);
-    },
+
+ },
 };
 
 
