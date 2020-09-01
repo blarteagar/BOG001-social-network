@@ -54,6 +54,8 @@ export const likeFunction = async (postId) => {
 };
 
 export const counterFunction = (postId, myCallback) => {
+
+  let unsubscribe;
   let db = firebase.firestore();
   let auth =  firebase.auth().currentUser;
   let docRefPost = db
@@ -62,8 +64,11 @@ export const counterFunction = (postId, myCallback) => {
     .collection("likes" + postId)
     .where("like", "==", 1);
 
-  docRefPost.onSnapshot(myCallback);  
+  
+ docRefPost.onSnapshot(myCallback);  
+ 
 
   
 }
 
+  

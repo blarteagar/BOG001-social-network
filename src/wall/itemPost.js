@@ -36,7 +36,7 @@ export const postItem = {
      </main>
      
      <footer class="footerPost" id="footerPostId">
-     ${buttons}//Blanca
+     ${buttons}
      <p class="likesCount" id=${counterId}></p>
      <button class="heartWall"  id=${buttonId}><img class="heartWall" src="../img/heart.png"></button>
      </footer>
