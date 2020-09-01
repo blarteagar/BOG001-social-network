@@ -50,8 +50,7 @@ export const postItem = {
     let counterId = "counter" + postId;
     
     let btnHeartThisPost = document.getElementById(buttonId);
-    
-    let counterId = "counter" + postId;   
+      
     let counter = document.getElementById(counterId);
     
     
