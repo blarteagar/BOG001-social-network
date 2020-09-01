@@ -1,3 +1,4 @@
+
 import { signOutUser } from "../FireFunctions/signOut.js";
 import { router } from "../router.js";
 import { loadModal } from "../component/modal.js";
@@ -17,6 +18,8 @@ const leave = async (event) => {
   await signOutUser();
   history.replaceState("#login", "", "#login");
   router("#login");
+  
+
 
   console.log("nos vamos :-(");
 };

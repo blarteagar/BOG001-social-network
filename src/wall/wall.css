@@ -231,7 +231,7 @@ html, body, .wall-container, #root {
   font-family: "Catamaran", sans-serif;
   font-style: normal;
   font-weight: bolder;
-  color: #CBEF43;
+  color: #cbef43;
   justify-self: end;
   width: fit-content;
   height: fit-content;
@@ -318,58 +318,33 @@ html, body, .wall-container, #root {
   box-sizing: border-box;
 }
 
+
+
 @media screen and (min-width: 768px) {
-  .header,
-  .footer {
-    width: 100%;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    border: solid #e5e5e5;
-    border-width: 1px 1px;
-    align-items: center;
-    text-align: center;
-  }
 
-  .header {
+  .headerWall {
     display: grid;
-    grid-template-columns: 4fr 1fr 1fr;
-    grid-gap: 15px;
+    grid-template-columns: repeat(10, 10%);
+    
   }
 
-  .TechMewall {
-    display: inline-block;
-    text-align: left;
-  }
   .techwall {
-    font-family: "Chakra Petch", sans-serif;
-    color: #f515e0;
-    font-size: 9vh;
+    font-size: 8vh;
   }
 
-  .Mewall {
-    font-family: "Cabin Sketch";
-    color: #cbef43;
-    font-size: 9vh;
-    font-style: normal;
-    font-weight: normal;
+  .Mewall {   
+    font-size: 8vh;
   }
+  
   .btnOutWall {
-    color: #cccccc;
-    background: #3a2c65;
-    text-decoration: none;
-    text-align: right;
-    font-family: "Catamaran", sans-serif;
-    font-style: normal;
+    grid-column-start: 10;
+    grid-column-end: 11;
     font-size: 25px;
   }
 
   .btnWallWall {
-    color: #cccccc;
-    background: #3a2c65;
-    text-decoration: none;
-    text-align: right;
-    font-family: "Catamaran", sans-serif;
-    font-style: normal;
+    grid-column-start: 9;
+    grid-column-end: 10;   
     font-size: 25px;
   }
 
@@ -379,36 +354,53 @@ html, body, .wall-container, #root {
     font-family: "Chakra Petch", sans-serif;
     font-size: 22px;
   }
-  .idea {
-    text-align: center;
-    color: #50c5b7;
-    text-decoration-line: underline;
-  }
+
   .box-post {
-    margin-bottom: 20px;
-    border: 1px solid #cccccc;
-    border-radius: 0px;
-    background-color: #6e6095;
+    min-height: 110px;
+    padding: 15px 20px;
+  }
+ 
+  .mainPost {
+    padding: 10px 15px;
+    min-height: 50px; 
   }
 
-  .title {
-    color: #50c5b7;
-    font-size: 18px;
-    font-family: "Chakra Petch", sans-serif;
+  .Fecha {   
+    font-size: 15px;   
   }
 
-  .Idea {
-    color: #c4c4c4;
-    font-size: 16px;
-    font-family: "Catamaran", sans-serif;
+ .userNamePost {
+    font-size: larger;
   }
-  .Fecha {
-    color: #c4c4c4;
-    font-size: 14px;
-    font-family: "Catamaran", sans-serif;
-    text-align: left;
-    margin-top: 0px;
+
+  .mainPost h2 {
+    font-size: large;
   }
+
+  .footerPost {
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(40, 2.5%);
+    align-items: flex-end;
+    height: 35px;
+    width: 100%;
+  
+  }
+
+
+  .likesCount {
+    grid-column-start: 39;
+    grid-column-end: 40;
+    font-size: 15px;  
+  }
+  
+  .heartWall {
+    grid-column-start: 40;
+    grid-column-end: 41;
+    height: 25px;
+    }
+  
 
   .footer {
     display: grid;
@@ -420,39 +412,27 @@ html, body, .wall-container, #root {
   .nombres {
     color: #cccccc;
     font-family: "Catamaran", sans-serif;
-    font-size: 22px;
-    margin-top: -56px;
+    font-size: 15px;
+    
   }
 
   .icon {
-    padding: 15px;
-    display: flex;
-    justify-content: center;
-    text-align: -webkit-auto;
-    margin-right: -67px;
+    display: grid;
+    grid-template-columns: repeat(25, 4%);
   }
 
-  .git {
-    /* width: 52%; */
-    height: 92px;
-    /* margin-right: 30px; */
+  #git {
+    grid-column-start: 12;
+    grid-column-end: 13;   
   }
 
-  .jest {
-    /* width: 970%; */
-    height: 84px;
-    margin-top: 8px;
-    /* margin-left: -134px; */
-    padding: 2px;
+  #jest {
+    grid-column-start: 13;
+    grid-column-end: 14;   
   }
 
-  .mdn {
-    /* width: 163%; */
-    height: 196px;
-    margin-top: -48px;
-    padding: 6px;
-    /* margin-right: 18px; */
-    margin-bottom: -81px;
-    padding: 41px;
+  #mdn {
+    grid-column-start: 14;
+    grid-column-end: 15;  
   }
 }
