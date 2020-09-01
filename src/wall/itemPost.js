@@ -3,8 +3,8 @@ import { theAuthor, newBtns } from "../wall/addButttons.js"
 
 export const postItem = {
 
-  render: (postId, postData) => {
-
+  render: async (postId , postData) => {
+    
     let buttonId = "btnHeart" + postId;
     let counterId = "counter" + postId;
 
@@ -45,28 +45,38 @@ export const postItem = {
     return view;
   },
   afterRender: async (postId) => {
+    
     let buttonId = "btnHeart" + postId;
     let counterId = "counter" + postId;
     
     let btnHeartThisPost = document.getElementById(buttonId);
-
-    btnHeartThisPost.addEventListener("click", () => {
-      likeFunction(postId);
-    })
-
-    let count = await counterFunction(postId);
-    let counterText = document.createTextNode(count);
+    
+    let counterId = "counter" + postId;   
     let counter = document.getElementById(counterId);
-
-    counter.appendChild(counterText);
-
+    
+    
+    let callback = (snapshot) => {
+      let result;
+      result = snapshot.docs.length;
+      console.log(result);
+      counter.innerHTML= result;
+      
   
-  
-  },
-};
+    }
+    
+    counterFunction(postId, callback);
+    
+    
 
-//<h1 id="title" class="title">${data.title}</h1>
+    btnHeartThisPost.addEventListener("click", async () => {
 
-/*
-   
- */
+      try {
+        await likeFunction(postId);  
+        console.log("finalizada likeFunction del addeventlistener"); 
+      }
+      catch { console.log("error")}      
+
+    });
+  }
+}
+
