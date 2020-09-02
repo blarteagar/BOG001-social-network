@@ -17,7 +17,7 @@ export const createUser = async (email, password) => {
     history.replaceState("#register", "", "#register");
     return {title, message};
      
-    //return "Registrado Correctamente"
+    // return "Registrado Correctamente"
     
   } catch (error) {
     var errorCode = error.code;
@@ -28,17 +28,17 @@ export const createUser = async (email, password) => {
     if (errorCode == "auth/invalid-email") {
       title = "Por favor";
       message = "Introduce un correo válido";      
-      //return message;
+      // return message ;
 
     } else if (errorCode == "auth/email-already-in-use") {
       title = "Error";
       message = "Este correo ya está registrado";
-      //return message;
+      // return message ;
 
     } else if (errorCode == "auth/weak-password") {
       title = "Error";
       message = "La contraseña debe tener mínimo 6 caracteres"
-      //return message;
+      return message ;
 
     } else {
       errorCode;
