@@ -7,9 +7,10 @@ export const likeFunction = async (postId) => {
     .collection("likes" + postId)
     .doc("likeFrom" + auth.uid);
 
-  docRef.get().then((doc) => {
+  await docRef.get().then((doc) => {
     if (!doc.exists) {
-      docRef.set({
+      docRef
+        .set({
           userId: auth.uid,
           postId: postId,
           like: 1,
@@ -20,7 +21,6 @@ export const likeFunction = async (postId) => {
           );
           console.log("se ha creado el documento de like:" + docRef.id);
           console.log("este documento tiene una data:");
-          
         })
         .catch((error) => {
           console.error("ha habido algún error dando like:" + error);
@@ -53,21 +53,22 @@ export const likeFunction = async (postId) => {
   });
 };
 
-export const counterFunction = async (postId) => {
+export const counterFunction = (postId, myCallback) => {
+
+  let unsubscribe;
+  let db = firebase.firestore();
+  let auth =  firebase.auth().currentUser;
+  let docRefPost = db
+    .collection("Posts")
+    .doc(postId)
+    .collection("likes" + postId)
+    .where("like", "==", 1);
+
   
-  let db = await firebase.firestore();
-  let auth = firebase.auth().currentUser;
-  let docRefPost = await db.collection("Posts").doc(postId).collection("likes" + postId);
+ docRefPost.onSnapshot(myCallback);  
+ 
 
-  try {
+  
+}
 
-    let likesCollection = await docRefPost.where("like", "==", 1).get();
-    return likesCollection.docs.length
-
-
-
-  } catch (error) {
-      console.log(error)
-  }
-
-};
+  

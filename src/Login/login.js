@@ -1,14 +1,10 @@
 import { watcher } from "../FireFunctions/signOut.js";
-import {
-  loginGoogle,
-  loginWithEmail,
-} from "../FireFunctions/signInEmailGoogle.js";
+import {loginGoogle,loginWithEmail} from "../FireFunctions/signInEmailGoogle.js";
 import { router } from "../router.js";
 import { loadModal, closeModal } from "../component/modal.js";
 
 export const LoginWithEmailAndPassword = async (event) => {
   event.preventDefault();
-  
   let loginEmail = document.getElementById("emailLogin").value;
   let loginPass = document.getElementById("passLogin").value;
   let statusLogin = await loginWithEmail(loginEmail, loginPass);
